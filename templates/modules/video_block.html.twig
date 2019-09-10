@@ -1,0 +1,41 @@
+<!-- Первый блок с видеофоном-->
+<div class="block1 blockvideo">
+    <div id="video-bg">
+        <video muted="" autoplay="" loop="" preload="auto" {#poster="{{ asset('img/banner3.jpg') }}"#}>
+            <source src="{{ asset('video/video.mp4') }}" type="video/mp4">
+        </video>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="zagolovki pb2">
+                <h1>Автосервис Land Rover в Москве</h1>
+                <h4>Сервис положительных эмоций</h4>
+            </div>
+
+            <div class="zagolovki pb1">
+                <h4>Диагностика, ремонт и обслуживание</h4>
+            </div>
+            <div class="utp-wrap">
+                <div class="row">
+                    <div class="utp align-self-center">
+                        <span class="utp1">Гарантия 2 года</span>
+                        <span class="utp2">Дешевле дилера на 45%</span>
+                        <span class="utp3">Сохранение заводской гарантии</span>
+                        <span class="utp4">Бесплатная диагностика по 56 пунктам</span>
+                    </div>
+                    <div class="block1form align-self-center">
+                        <form action="#">
+                            <b>Записаться на ремонт</b>
+                            <span>Для отправки заявки заполните форму:</span>
+                            <input type="text" placeholder="Ваше имя">
+                            <input type="text" placeholder="Номер телефона">
+                            <input type="submit" class="mbtn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Конец первого блока-->

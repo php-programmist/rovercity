@@ -14,9 +14,39 @@
         {% endblock %}
     </head>
     <body>
+    {{ include('modules/header.html.twig') }}
+    {{ include('modules/video_block.html.twig') }}
+
+    <div class="wraper">
+
+        {{ include('modules/actions.html.twig') }}
+        {{ include('modules/services.html.twig') }}
+        {{ include('modules/advantages_slider.html.twig') }}
+        {{ include('modules/advantages_video.html.twig') }}
+        {{ include('modules/pricelist.html.twig') }}
+        {{ include('modules/callback_buttons.html.twig') }}
+        {{ include('modules/calculator.html.twig') }}
+        {{ include('modules/about_company.html.twig') }}
+        {{ include('modules/experts.html.twig') }}
+        {{ include('modules/reviews.html.twig') }}
+        {{ include('modules/rating.html.twig') }}
+        {{ include('modules/our_works.html.twig') }}
+
         {% block body %}
 
         {% endblock %}
+
+
+
+        {{ include('modules/footer.html.twig') }}
+        {{ include('modules/modal_window.html.twig') }}
+
+
+
+
+
+    </div>
+
         {% block javascripts %}
             <script src="{{ asset('js/jquery.min.js') }}"></script>
             <script src="{{ asset('js/jquery.glide.js') }}"></script>

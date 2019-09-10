@@ -1,0 +1,69 @@
+<!--Начало блока с калькулятором-->
+<div class="block7 calc-wrap">
+    <div class="container">
+        <div class="zag">Цены на обслуживание</div>
+        <div class="calc-head">
+            <span class="calc-head-marka marka-activ">Discovery</span>
+            <span class="calc-head-marka">Freelander</span>
+            <span class="calc-head-marka">Defender</span>
+            <span class="calc-head-marka">Discovery Sport</span>
+            <span class="calc-head-marka">Range Rover</span>
+            <span class="calc-head-marka">RR Sport</span>
+            <span class="calc-head-marka">Evoque</span>
+            <span class="calc-head-marka">Velar</span>
+            <span class="calc-head-marka">Jaguar</span>
+        </div>
+        <!--Основная часть калькулятора (меняется по нажатию на выбор автомобилей или как угодно программисту)-->
+        <div class="calc-body-wrap calc-discovery">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 calc-img align-self-center"><img src="{{ asset('img/calc/LandeRover1.png') }}" alt="*"></div>
+                <div class="col-lg-6 col-md-7 calc-body">
+                    <div class="zag">Расчет стоимости</div>
+                    <form action="#">
+                        <select name="#" id="#" class="calc-tipuslugi">
+                            <option value="1" class="option">Выберите услугу</option>
+                            <option value="2">Название услуги 1</option>
+                            <option value="3">Длинное название услуги</option>
+                            <option value="4">Очень очень длиное название услуги</option>
+                            <option value="5">Услуга 5</option>
+                            <option value="6">Название услуги 6</option>
+                            <option value="7">Название услуги 7</option>
+                        </select>
+                        <span class="calc-input">
+										<b>Пробег авто:</b> <input type="text"> км
+									</span>
+                        <span class="calc-polzunok">
+										<span class="calc-span0">0</span>
+										<span class="calc-span1">500 000</span>
+										<input  type="range" min="0" max="500000" step="1" value="5000">
+									</span>
+                        <span class="calc-select-wrap">
+										<select name="#" id="#" class="calc-godvipuska">
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+										</select>
+										<select name="#" id="#" class="calc-tipdvig">
+											<option value="1">Тип двигателя</option>
+											<option value="1">тип двигателя</option>
+											<option value="1">тип двигателя</option>
+											<option value="1">тип двигателя</option>
+
+										</select>
+									</span>
+                        <span class="btn-wrap"><input type="submit" class="mbtn" value="Рассчитать"></span>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<!--Конец блока с калькулятором-->
