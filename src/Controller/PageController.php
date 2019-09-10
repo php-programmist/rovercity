@@ -2,38 +2,19 @@
 
 namespace App\Controller;
 
+use App\Repository\ContentRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class PageController extends AbstractController
 {
-    /**
-     * @Route("/", name="index")
-     */
-    public function index()
+    public function dynamic_pages($token,ContentRepository $content_repository)
     {
-        return $this->render('page/index.html.twig', [
-            'controller_name' => 'PageController',
-        ]);
-    }
-    
-    /**
-     * @Route("/neispravnosti/", name="neispravnosti")
-     */
-    public function neispravnosti()
-    {
-        dd('neispravnosti');
-        return $this->render('page/index.html.twig', [
-            'controller_name' => 'PageController',
-        ]);
-    }
-    
-    /**
-     * @Route("/{token}/", name="dynamic_pages", requirements={"token"=".+"})
-     */
-    public function dynamic_pages($token)
-    {
-        
+        if (!$content_entity = $content_repository->findOneBy(['path' => '/' . $token . '/'])) {
+            throw new NotFoundHttpException();
+        }
+        dd($content_entity);
         return $this->render('page/index.html.twig', [
             'controller_name' => 'PageController',
         ]);
