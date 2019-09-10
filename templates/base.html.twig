@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}Автосервис Land Rover (Ленд Ровер) в Москве 🚩 «Ровер Сити» - специализированный сервис Land Rover{% endblock %}</title>
+    <title>{% block title %}Автосервис Land Rover (Ленд Ровер) в Москве 🚩 «Ровер Сити» - специализированный сервис Land Rover{% endblock %}</title>
+    <meta name="description" content="{% block description %}Автосервисе Land Rover (Ленд Ровер) в Москве. ⭐ Сервис европейского уровня. ✅ Бесплатная диагностика и эвакуатор. ✅ Выгода до 30%. ⭐ Ремонт и техническое обслуживание Land Rover по низкой цене ⏰ записаться в автосервис «Ровер Сити» ☎ 8(495)150-70-69.{% endblock %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock %}">
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
@@ -18,33 +20,11 @@
     {{ include('modules/video_block.html.twig') }}
 
     <div class="wraper">
-
-        {{ include('modules/actions.html.twig') }}
-        {{ include('modules/services.html.twig') }}
-        {{ include('modules/advantages_slider.html.twig') }}
-        {{ include('modules/advantages_video.html.twig') }}
-        {{ include('modules/pricelist.html.twig') }}
-        {{ include('modules/callback_buttons.html.twig') }}
-        {{ include('modules/calculator.html.twig') }}
-        {{ include('modules/about_company.html.twig') }}
-        {{ include('modules/experts.html.twig') }}
-        {{ include('modules/reviews.html.twig') }}
-        {{ include('modules/rating.html.twig') }}
-        {{ include('modules/our_works.html.twig') }}
-
         {% block body %}
 
         {% endblock %}
-
-
-
         {{ include('modules/footer.html.twig') }}
         {{ include('modules/modal_window.html.twig') }}
-
-
-
-
-
     </div>
 
         {% block javascripts %}

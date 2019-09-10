@@ -1,10 +1,23 @@
 {% extends('base.html.twig') %}
-
+{% block title %}{{ content.metaTitle }}{% endblock %}
+{% block description %}{{ content.metaDesrc }}{% endblock %}
+{% block keywords %}{{ content.metaKeywords }}{% endblock %}
 {% block body %}
+    {{ include('modules/services.html.twig') }}
+    {{ include('modules/advantages_slider.html.twig') }}
+    {{ include('modules/pricelist.html.twig') }}
+    {{ include('modules/callback_buttons.html.twig') }}
+    {{ include('modules/actions.html.twig') }}
+    {{ include('modules/calculator.html.twig') }}
+    {{ include('modules/about_company.html.twig') }}
+    {{ include('modules/experts.html.twig') }}
+    {{ include('modules/reviews.html.twig') }}
+    {{ include('modules/rating.html.twig') }}
+    {{ include('modules/our_works.html.twig') }}
     <!--Блок СЕО начало-->
     <div class="block12 blockseo">
         <div class="container container2">
-            тут сео текст
+            {{ content.text|raw }}
             <div class="seobtn">Читать далее</div>
         </div>
     </div>
