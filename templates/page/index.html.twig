@@ -1,0 +1,1922 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <div class="header header1">
+        <!--Шапка начало-->
+        <div class="header-fix1">
+            <div class="container">
+                <div class="row">
+                    <div class="header-logo col-xl-2 col-lg-3 col-md-8 col-sm-4 col-8 align-self-center">
+                        <div class="header-logo-img">
+                            <img src="{{ asset('img/logo.png') }}" alt="11">
+                        </div>
+                        <div class="header-logo-social">
+                            <a href="https://www.youtube.com/channel/UCBh1PYncUgJyC9XI3ToDgEg/featured"><img src="{{ asset('img/yt.png') }}" alt="*"></a>
+                            <a href="https://www.instagram.com/rovercitymoscow"><img src="{{ asset('img/inst.png') }}" alt="*"></a>
+                            <a href="https://vk.com/rovercitymoscow"><img src="{{ asset('img/vk.png') }}" alt="*"></a>
+                            <a href="https://www.facebook.com/RoverCityMoscow?ref=bookmarks"><img src="{{ asset('img/fb.png') }}" alt="*"></a>
+                        </div>
+                    </div>
+
+                    <div class="header-adres col-lg-6 col-xl-4 align-self-center  offset-xl-2  ">Москва, Севастопольский проспект, дом 95 б. <div>Ежедневно с 9.00 до 21.00 <a href="#">схема проезда</a></div></div>
+
+                    <div class="header3-whatsapp col-xl-2 align-self-center ">
+                        <a href="#"> <img src="{{ asset('img/wahatsapp.png') }}" alt="*"><br>
+                            <span>WhatsApp</span>
+                        </a>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4  align-self-center header-phone">
+                        <a href="tel:74951169626">+7 (495) 116-96-26</a>
+                        <div class="mbtn">Заказать звонок</div>
+                    </div>
+                    <div class="col-4 menubtn-wrap"><span class="menubtn"><img src="{{ asset('img/menu.svg') }}" alt="1"></span></div>
+
+                </div>
+            </div>
+        </div>
+        <!--Шапка конец-->
+
+        <!--меню с сылками на страницы-->
+        <div class="header-menu1 header-menu">
+            <div class="container">
+                <div class="menu-wrap">
+                    <a href="#">Прайс-лист</a>
+                    <a href="#">Акции</a>
+                    <a href="#">Гарантии</a>
+                    <a href="#">Наши работы</a>
+                    <a href="#">О нас</a>
+                    <a href="#">Контакты</a>
+                    <a href="#">Калькулятор</a>
+                </div>
+            </div>
+        </div>
+        <!--меню конец-->
+        <!--меню с выпадающим списком-->
+        <div class="header-menu2 header-menu">
+            <div class="container">
+                <div class="menu-wrap">
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil" >Discovery</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img align-self-center"><a href="#">
+                                            <img src="{{ asset('img/Discovery.png') }}" alt="Discovery">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Freelander</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/freelander.png') }}" alt="Freelander">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Defender</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/Defender.png') }}" alt="Defender">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Discovery Sport</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/DiscoverySport.png') }}" alt="Discovery Sport">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Range Rover</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/landrover.png') }}" alt="Range Rover">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">RR Sport</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/RangeRoverSport.png') }}" alt="RR Sport">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Evoque</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/xRangeRoverEvoque.png.pagespeed.ic.HJQ8XOu1rD.webp') }}" alt="Evoque">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Velar</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/RangeRoverVogue2.png') }}" alt="Velar">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vip-menu-wrap Discovery">
+                        <a href="#" class="vip-ssil">Jaguar</a>
+                        <div class="vip-menu-block ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-3 img"><a href="#">
+                                            <img src="{{ asset('img/jaguar.png') }}" alt="Jaguar">
+                                        </a></div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Техническое обслуживание</a>
+                                        <a href="#">Ремонт трансмиссии</a>
+                                        <a href="#">Покраска кузова</a>
+                                        <a href="#">Ремонт электрооборудования</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Ремонт двигателя</a>
+                                        <a href="#">Ремонт ходовой</a>
+                                        <a href="#">Диагностика</a>
+                                        <a href="#">Кузовной ремонт</a>
+                                    </div>
+                                    <div class="col-md-3 spis align-self-center">
+                                        <a href="#">Замена стёкол</a>
+                                        <a href="#">Детейлинг</a>
+                                        <a href="#">Ремонт дизельного двигателя</a>
+                                        <a href="#">Тормозная система</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--меню с выпадающим списком конец-->
+    </div>
+
+    <!-- Первый блок с видеофоном-->
+    <div class="block1 blockvideo">
+        <div id="video-bg">
+            <video muted="" autoplay="" loop="" preload="auto" poster="{{ asset('img/banner3.jpg') }}">
+                <source src="{{ asset('video/video.mp4') }}" type="video/mp4">
+            </video>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="zagolovki pb2">
+                    <h1>Автосервис Land Rover в Москве</h1>
+                    <h4>Сервис положительных эмоций</h4>
+                </div>
+
+                <div class="zagolovki pb1">
+                    <h4>Диагностика, ремонт и обслуживание</h4>
+                </div>
+                <div class="utp-wrap">
+                    <div class="row">
+                        <div class="utp align-self-center">
+                            <span class="utp1">Гарантия 2 года</span>
+                            <span class="utp2">Дешевле дилера на 45%</span>
+                            <span class="utp3">Сохранение заводской гарантии</span>
+                            <span class="utp4">Бесплатная диагностика по 56 пунктам</span>
+                        </div>
+                        <div class="block1form align-self-center">
+                            <form action="#">
+                                <b>Записаться на ремонт</b>
+                                <span>Для отправки заявки заполните форму:</span>
+                                <input type="text" placeholder="Ваше имя">
+                                <input type="text" placeholder="Номер телефона">
+                                <input type="submit" class="mbtn">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--Конец первого блока-->
+    <div class="wraper">
+
+        <!--Второй блок - "Акции"-->
+        <div class="block2 blockakcii">
+            <div class="container container2">
+                <div class="card-wrap">
+                    <div class="card-block">
+                        <div class="card">
+                            <b class="card-zag">Бесплатная диагностика</b>
+                            <p>Комплексная диагностика по 56 параметрам</p>
+                            <div class="cena-wrap">
+                                <div>
+                                    <span class="stcena">3000 руб</span>
+                                    <span class="newcena ">0 руб</span>
+                                </div>
+                                <a href="#" class="mbtn mymodal-btn" >Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="card">
+                            <b class="card-zag">Бесплатная диагностика</b>
+                            <p>Комплексная диагностика по 56 параметрам</p>
+                            <div class="cena-wrap">
+                                <div>
+                                    <span class="stcena">3000 руб</span>
+                                    <span class="newcena ">0 руб</span>
+                                </div>
+                                <a href="#" class="mbtn mymodal-btn" >Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="card">
+                            <b class="card-zag">Бесплатная диагностика</b>
+                            <p>Комплексная диагностика по 56 параметрам</p>
+                            <div class="cena-wrap">
+                                <div>
+                                    <span class="stcena">3000 руб</span>
+                                    <span class="newcena ">0 руб</span>
+                                </div>
+                                <a href="#" class="mbtn mymodal-btn" >Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="card">
+                            <b class="card-zag">Бесплатная диагностика</b>
+                            <p>Комплексная диагностика по 56 параметрам</p>
+                            <div class="cena-wrap">
+                                <div>
+                                    <span class="stcena">3000 руб</span>
+                                    <span class="newcena ">0 руб</span>
+                                </div>
+                                <a href="#" class="mbtn mymodal-btn" >Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="card">
+                            <b class="card-zag">Бесплатная диагностика</b>
+                            <p>Комплексная диагностика по 56 параметрам</p>
+                            <div class="cena-wrap">
+                                <div>
+                                    <span class="stcena">3000 руб</span>
+                                    <span class="newcena ">0 руб</span>
+                                </div>
+                                <a href="#" class="mbtn mymodal-btn" >Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block">
+                        <div class="card">
+                            <b class="card-zag">Бесплатная диагностика</b>
+                            <p>Комплексная диагностика по 56 параметрам</p>
+                            <div class="cena-wrap">
+                                <div>
+                                    <span class="stcena">3000 руб</span>
+                                    <span class="newcena ">0 руб</span>
+                                </div>
+                                <a href="#" class="mbtn mymodal-btn" >Записаться</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Конец  блока "Акции"-->
+
+        <!--Блок "УСЛУГИ" начало-->
+        <div class="block3 blockuslugi">
+            <div class="container container2">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="img"><img src="{{ asset('img/uslugi/landrover.png') }}" alt="*"></div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row uslugi-wrap">
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/1.jpg') }}" alt="*" class="usluga-icon"> Техническое обслуживаение <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Техническое обслуживание</a>
+                                    <a href="#">Замена масла в двигателе</a>
+                                    <a href="#">Услуги специализированного автосервиса «Rover City»</a>
+                                    <a href="#">Замена масла в АКПП</a>
+                                    <a href="#">Замена топливного фильтра</a>
+                                    <a href="#">Замена фильтра в АКПП</a>
+                                    <a href="#">Замена масла в раздатке</a>
+                                    <a href="#">Замена масла в мостах</a>
+                                    <a href="#">Замена масла в МКПП</a>
+                                    <a href="#">Замена охлаждающей жидкости</a>
+                                    <a href="#">Замена ремня ГРМ</a>
+                                    <a href="#">Замена цепи ГРМ</a>
+                                    <a href="#">Замена приводного ремня</a>
+                                    <a href="#">Замена ролика натяжителя приводного ремня</a>
+                                    <a href="#">Замена помпы</a>
+                                    <a href="#">Замена свечей зажигания</a>
+                                    <a href="#">Обслуживание и проверка АКБ</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/2.jpg') }}" alt="*" class="usluga-icon"> Диагностика<img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Компьютерная диагностика</a>
+                                    <a href="#">Полная диагностика</a>
+                                    <a href="#">Электронная диагностика</a>
+                                    <a href="#">Диагностика электрики</a>
+                                    <a href="#">Диагностика электрооборудования</a>
+                                    <a href="#">Диагностика систем</a>
+                                    <a href="#">Комплексная диагностика</a>
+                                    <a href="#">Диагностика КПП</a>
+                                    <a href="#">Диагностика двигателя</a>
+                                    <a href="#">Диагностика подвески</a>
+                                    <a href="#">Диагностика кондиционера</a>
+                                    <a href="#">Диагностика неисправностей</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/3.jpg') }}" alt="*" class="usluga-icon"> Ремонт трансмиссии <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Замена соленоида АКПП</a>
+                                    <a href="#">Обслуживание АКПП</a>
+                                    <a href="#">Ремонт трансмиссии</a>
+                                    <a href="#">Ремонт гидроблока АКПП</a>
+                                    <a href="#">Диагностика АКПП</a>
+                                    <a href="#">Промывка АКПП</a>
+                                    <a href="#">Ремонт АКПП</a>
+                                    <a href="#">Ремонт МКПП</a>
+                                    <a href="#">Замена сцепления</a>
+                                    <a href="#">Ремонт заднего моста</a>
+                                    <a href="#">Замена и ремонт приводов</a>
+                                    <a href="#">Замена раздатки</a>
+                                    <a href="#">Ремонт и замена редукторов</a>
+                                    <a href="#">Замена ШРУСа</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/4.jpg') }}" alt="*" class="usluga-icon"> Кузовной ремонт<img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Кузовной ремонт</a>
+                                    <a href="#">Профессиональный ремонт фар</a>
+                                    <a href="#">Ремонт замка двери</a>
+                                    <a href="#">Рихтовка кузова</a>
+                                    <a href="#">Устранение вмятин</a>
+                                    <a href="#">Жестяные работы</a>
+                                    <a href="#">Локальный ремонт кузова</a>
+                                    <a href="#">Кузовной ремонт бампера</a>
+                                    <a href="#">Кузовной ремонт двери</a>
+                                    <a href="#">Ремонт и замена крыла</a>
+                                    <a href="#">Ремонт и замена боковых зеркал</a>
+                                    <a href="#">Ремонт и замена крышки багажника</a>
+                                    <a href="#">Ремонт и замена панели крыши</a>
+                                    <a href="#">Ремонт лонжерона</a>
+                                    <a href="#">Ремонт порогов</a>
+                                    <a href="#">Кузовной ремонт капота</a>
+                                    <a href="#">Антикоррозийная обработка кузова</a>
+                                    <a href="#">Восстановление геометрии кузова</a>
+                                    <a href="#">Диагностика кузова</a>
+                                    <a href="#">Обработка кузова</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/5.jpg') }}" alt="*" class="usluga-icon"> Покраска кузова <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Покраска автомобиля</a>
+                                    <a href="#">Покраска сколов на автомобиле</a>
+                                    <a href="#">Покраска зеркала</a>
+                                    <a href="#">Покраска вмятины</a>
+                                    <a href="#">Покраска арок</a>
+                                    <a href="#">Покраска двери</a>
+                                    <a href="#">Покраска деталей</a>
+                                    <a href="#">Покраска капота</a>
+                                    <a href="#">Покраска крыла</a>
+                                    <a href="#">Покраска крыши</a>
+                                    <a href="#">Покраска кузова</a>
+                                    <a href="#">Покраска бампера</a>
+                                    <a href="#">Покраска пластика салона</a>
+                                    <a href="#">Покраска порогов</a>
+                                    <a href="#">Покраска царапин на автомобиле</a>
+                                    <a href="#">Покрасочные работы кузова</a>
+                                    <a href="#">Полная покраска</a>
+                                    <a href="#">Аэрография для</a>
+                                    <a href="#">Диагностика лакокрасочного покрытия</a>
+                                    <a href="#">Подбор краски</a>
+                                    <a href="#">Покраска в матовый цве</a>т
+                                    <a href="#">Устранение царапин</a>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/6.jpg') }}" alt="*" class="usluga-icon"> Замена стёкол <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Замена стекла люка</a>
+                                    <a href="#">Замена стекла двери</a>
+                                    <a href="#">Замена стекол</a>
+                                    <a href="#">Вклейка автомобильных стёкол</a>
+                                    <a href="#">Вклейка лобового стекла</a>
+                                    <a href="#">Установка лобового стекла</a>
+                                    <a href="#">Замена лобового стекла</a>
+                                    <a href="#">Ремонт и замена заднего стекла</a>
+                                    <a href="#">Ремонт сколов на стекле</a>
+                                    <a href="#">Ремонт трещин на стекле</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/7.jpg') }}" alt="*" class="usluga-icon"> Ремонт электрооборудования <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Ремонт электрооборудования</a>
+                                    <a href="#">Ремонт стартера и генератора</a>
+                                    <a href="#">Профессиональный ремонт подогрева сидений</a>
+                                    <a href="#">Ремонт панели приборов</a>
+                                    <a href="#">Ремонт датчиков авто</a>
+                                    <a href="#">Ремонт электрики</a>
+                                    <a href="#">Ремонт электропроводки</a>
+                                    <a href="#">Ремонт генераторов</a>
+                                    <a href="#">Ремонт стартера</a>
+                                    <a href="#">Ремонт автокондиционеров</a>
+                                    <a href="#">Ремонт печки</a>
+                                    <a href="#">Замена реле регулятора</a>
+                                    <a href="#">Замена топливного насоса</a>
+                                    <a href="#">Обслуживание АКБ</a>
+
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/8.jpg') }}" alt="*" class="usluga-icon"> Детайлинг <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Детейлинг</a>
+                                    <a href="#">Полировка кузова</a>
+                                    <a href="#">Мойка автомобиля</a>
+                                    <a href="#">Полировка салона</a>
+                                    <a href="#">Химчистка салона</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/9.jpg') }}" alt="*" class="usluga-icon"> Ремонт двигателя <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Ремонт двигателя в Москве</a>
+                                    <a href="#">Ремонт и замена выхлопной системы</a>
+                                    <a href="#">Ремонт топливной системы</a>
+                                    <a href="#">Замена глушителя</a>
+                                    <a href="#">Ремонт вебасто</a>
+                                    <a href="#">Ремонт блока управления двигателя</a>
+                                    <a href="#">Замена бензонасоса</a>
+                                    <a href="#">Ремонт топливной системы</a>
+                                    <a href="#">Диагностика двигателя</a>
+                                    <a href="#">Обслуживание двигателя</a>
+                                    <a href="#">Переборка двигателя</a>
+                                    <a href="#">Промывка двигателя</a>
+                                    <a href="#">Купить двигатель</a>
+                                    <a href="#">Ремонт системы охлаждения</a>
+                                    <a href="#">Замена гидрокомпенсаторов</a>
+                                    <a href="#">Замена клапанов двигателя</a>
+                                    <a href="#">Замена поддона картера</a>
+                                    <a href="#">Ремонт турбины</a>
+                                    <a href="#">Замена поршневых колец</a>
+                                    <a href="#">Замена подушек двигателя</a>
+                                    <a href="#">Ремонт ГБЦ</a>
+                                    <a href="#">Ремонт коленчатого вала</a>
+                                    <a href="#">Ремонт масляного насоса</a>
+                                    <a href="#">Замена распредвала</a>
+                                    <a href="#">Капитальный ремонт двигателя</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/10.jpg') }}" alt="*" class="usluga-icon"> Ремонт дизельного двигателя <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Ремонт дизельного двигателя</a>
+                                    <a href="#">Капитальный ремонт дизельных двигателей</a>
+                                    <a href="#">Обслуживание дизельного двигателя</a>
+                                    <a href="#">Ремонт дизельных автомобилей</a>
+                                    <a href="#">Ремонт ТНВД</a>
+                                    <a href="#">Ремонт топливной аппаратуры дизельных двигателей</a>
+                                    <a href="#">Ремонт турбин дизельных двигателей</a>
+                                    <a href="#">Ремонт форсунок</a>
+                                    <a href="#">Диагностика дизельных двигателей</a>
+                                    <a href="#">Диагностика топливной системы дизельного двигателя</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/11.jpg') }}" alt="*" class="usluga-icon"> Ремонт ходовой <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Ремонт карданного вала</a>
+                                    <a href="#">Ремонт ходовой части</a>
+                                    <a href="#">Замена подвески</a>
+                                    <a href="#">Ремонт пневмоподвески</a>
+                                    <a href="#">Замена амортизаторов</a>
+                                    <a href="#">Замена стабилизатора</a>
+                                    <a href="#">Замена пружин подвески</a>
+                                    <a href="#">Замена рычага подвески</a>
+                                    <a href="#">Ремонт компрессора подвески</a>
+                                    <a href="#">Замена сайлентблоков подвески</a>
+                                    <a href="#">Ремонт рулевого управления</a>
+                                    <a href="#">Диагностика и ремонт ABS</a>
+                                    <a href="#">Сход-развал</a>
+                                    <a href="#">Шиномонтаж</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 usluga-block">
+                                <div class="usluga-btn"><img src="{{ asset('img/uslugi/12.jpg') }}" alt="*" class="usluga-icon"> Тормозная система <img src="{{ asset('img/uslugi/arrow.png') }}" alt="*" class="usluga-str"></div>
+                                <div class="usluga-body">
+                                    <a href="#">Ремонт тормозной системы</a>
+                                    <a href="#">Ремонт ручного тормоза</a>
+                                    <a href="#">Ремонт тормозной системы</a>
+                                    <a href="#">Обслуживание тормозной системы</a>
+                                    <a href="#">Замена тормозных колодок</a>
+                                    <a href="#">Замена тормозных дисков</a>
+                                    <a href="#">Ремонт и обслуживание тормозного суппорта</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--Конец  блока "УСЛУГИ"-->
+
+        <!--Тёмный блок со слайдером начало-->
+        <div class="block4 blackblockv1">
+            <div class="container container2">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="text-block text-block1">
+                            <div class="textzag">Сохранение заводской гарантии</div>
+                            <p>«Ровер Сити» - это сертифицированный автосервис по ремонту Land Rover и гарантия на автомобиль сохраняется</p>
+                        </div>
+                        <div class="text-block text-block2">
+                            <div class="textzag">Гарантия 2 года на все работы</div>
+                            <p>На слесарный ремонт - гарантия 2 года. Кузовной ремонт - пожизненная гарантия</p>
+                        </div>
+                        <div class="text-block text-block3">
+                            <div class="textzag">Крупнейший автосервис Land Rover в Москве</div>
+                            <p>Общая площадь 3000 м2 - более 30 автомобилей обслуживаются одновременно.</p>
+                        </div>
+                        <div class="text-block text-block4">
+                            <div class="textzag">Свой склад запчастей</div>
+                            <p>Только оригинальные запчасти и качественные аналоги. Все запчасти имеют сертификаты.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bslider">
+                            <div class="slider-for1">
+                                <div class="img"><img src="{{ asset('img/bslider1/1.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/3.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/4.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/5.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/6.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/7.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/8.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/9.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/10.jpg') }}" alt="*"></div>
+                            </div>
+                            <div class="slider-nav1">
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/1.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/3.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/4.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/5.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/6.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/7.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/8.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/9.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/10.jpg') }}" alt="*"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Конец  блока со слайдером-->
+
+        <!--Тёмный блок c видео начало-->
+        <div class="block4 blackblockv2">
+            <div class="container container2">
+                <div class="row">
+                    <div class="col-lg-6 align-self-center">
+                        <div class="text-block text-block1">
+                            <div class="textzag">Сохранение заводской гарантии</div>
+                            <p>«Ровер Сити» - это сертифицированный автосервис по ремонту Land Rover и гарантия на автомобиль сохраняется</p>
+                        </div>
+                        <div class="text-block text-block2">
+                            <div class="textzag">Гарантия 2 года на все работы</div>
+                            <p>На слесарный ремонт - гарантия 2 года. Кузовной ремонт - пожизненная гарантия</p>
+                        </div>
+                        <div class="text-block text-block3">
+                            <div class="textzag">Крупнейший автосервис Land Rover в Москве</div>
+                            <p>Общая площадь 3000 м2 - более 30 автомобилей обслуживаются одновременно.</p>
+                        </div>
+                        <div class="text-block text-block4">
+                            <div class="textzag">Свой склад запчастей</div>
+                            <p>Только оригинальные запчасти и качественные аналоги. Все запчасти имеют сертификаты.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="video">
+                            <video src="{{ asset('video/video.mp4') }}"  controls="controls"></video>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Конец  блока с видео-->
+
+        <!--Начало БЛОКА-АККАРДЕОНА с ценами-->
+        <div class="block5">
+            <div class="container container2">
+                <div class="zag">Техническое обслуживание</div>
+                <div class="accordion">
+                    <div class="accordion_item active_block ">
+                        <h3 class="title_block">Техническое обслуживание</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена масляного фильтра <b>от 540 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена воздушного фильтра <b>от 540 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена салонного фильтра <b>от 900 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена топливного фильтра <b>от 1080 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена масла в АКПП <b>от 2160 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена масла в МКПП <b>от 1440 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена масла в раздатке <b>от 900 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена масла в мостах <b>от 900 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Замена тормозной жидкости <b>от 1620 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Замена охлаждающей жидкости <b>от 2160 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена ремня ГРМ <b>от 7560 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена цепи ГРМ <b>от 10260 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена приводных ремней  <b>от 1080 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена свечей зажигания <b>от 1440 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Сброс межсервисного интервала  <b>от 900 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Диагностика</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика неисправностей автомобиля <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика электрики автомобиля <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика электрооборудования автомобиля <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика автокондиционеров <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика двигателя <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика дизельного двигателя <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика АКПП <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>диагностика МКПП <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика раздатки <b>от 480 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика ходовой части <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика подвески автомобиля <b>от 960 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика тормозной системы автомобиля <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика рулевого управления  <b>от 800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Ремонт двигателя</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Переборка двигателя <b>от 35960 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Промывка двигателя <b>от 1940 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика двигателя <b>от 1940 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена ремня ГРМ <b>от 6800 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена цепи ГРМ  <b>от 9230 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена распредвала <b>от 10530 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт коленчатого вала <b>от 4860 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена приводного ремня <b>от 1080 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Замена поршневой группы <b>от 19440 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт блока цилиндров (1 шт.)  <b>от 19440 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена свечей накаливания  <b>от 1440 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена свечей зажигания <b>от 1440 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт турбины <b>от 3730 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт системы охлаждения <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт топливной системы <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Ремонт дизельного двигателя</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремень ГРМ (ЦЕПЬ) - замена <b>от 4860 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт форсунок (1 шт.) <b>от 2750 р</b>. </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт турбин дизельных двигателей <b>от 4860 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт ТНВД <b>от 4050 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика дизельных двигателей<b> от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика топливной системы дизельного двигателя <b>от 1080 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт коленчатого вала <b>от 4860 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика турбины дизельного двигателя <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика ТНВД дизельного двигателя <b>от 1800 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика форсунок дизельного двигателя <b>от 1800 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика и проверка ТНВД с EDC <b>от 8100 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена свечей накаливания (за комплект только работа) <b>от 2750 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт ГБЦ (головка блока цилиндров) <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Ремонт трансмиссии</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт и замена гидроблока АКПП <b>от 8100 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт и замена гидротрансформатора АКПП <b>от 6480 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика АКПП<b> от 1620 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт и замена селектора АКПП Ремонт и замена селектора АКПП от 900 р.  </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт и замена соленоидов АКПП <b>от 3240 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт коробки МКПП <b>от 12960 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена сцепления МКПП<b> от 8910 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт приводов автомобиля <b>от 3400 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Замена шруса<b> от 3560 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Замена сцепления <b>от 9720 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт редукторов <b>от 5670 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт раздаточной коробки (раздатки) <b>от 5670 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена сальника <b>от 2920 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Ремонт электрооборудования</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт электрики <b>от 1800 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт генераторов <b>от 4860 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт стартера <b>от 4860 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт автокондиционера <b>от 4860 р</b>.</span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика автокондиционеров <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Дезинфекция автокондиционера <b>от 1620 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Чистка автокондиционера <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт радиатора автокондиционера <b>от 2110 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Заправка автокондиционера <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Замена датчиков <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт печки <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена лампы освещения <b>от 900 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена фары <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт системы зажигания: <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт трамблера <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Ремонт ходовой</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика пневмоподвески <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена сайлентблоков подвески<b> от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена задних амортизаторов <b>от 2590 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена передних амортизаторов <b>от 2750 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена стабилизаторов<b> от 2430 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика ходовой части. <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Сход-развал <b>от 3240 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Шиномонтаж Шиномонтаж от 1800 р.  </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт рулевого управления <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div><div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика рулевого управления <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт гидроусилителя руля <b>от 4860 р</b>. </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика ABS <b>от 900 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена рулевой рейки <b>от 4540 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Диагностика рулевой рейки <b>от 1080 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Тормозная система</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>замена задних тормозных колодок <b>от 1940 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>замена передних тормозных дисков <b>от 2430 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>замена задних тормозных дисков <b>от 2920 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>диагностика тормозной системы <b>от 1620 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена тормозной жидкости <b>от 1620 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>ремонт и обслуживание тормозного суппорта <b>от 1440 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Кузовной ремонт</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт вмятин <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт сколов <b>от 600 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт царапин <b>от 600 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Локальный кузовной ремонт ремонт <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт крыши <b>от 1200 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт крышки багажника <b>от 1200 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт двери <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт боковых зеркал <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт крыла <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт порогов <b>от 2160 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт бампера <b>от 1200 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт капота <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Восстановление геометрии кузова <b>от 6480 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт лонжерона<b> от 3240 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Покраска кузова</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Локальная покраска <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска вмятины автомобиля <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска сколов на автомобиле <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска царапин на автомобиле <b>от 1200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска заднего и переднего крыла <b>от 2700 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска капота <b>от 4320 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска передней и задней двери <b>от 2700 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска заднего и переднего бампера <b>от 2700 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска арок <b>от 1200 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска порогов <b>от 1800 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска суппортов <b>от 2160 р.</b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска молдингов <b>от 2160 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска спойлера <b>от 2160 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска автомобильных дисков <b>от 3240 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска двигателя (мотора) <b>от 5400 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Покраска машины в матовый цвет <b>от 70200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Аэрография <b>от 10800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Подбор краски <b>от 0 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Эксклюзивная покраска <b>от 4320 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Замена стёкол</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт и удаление сколов на стекле <b>от 600 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт и удаление трещин на стекле <b>от 600 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт заднего стекла <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена и установка заднего стекла <b>от 3240 р. </b></span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Ремонт лобового стекла <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена и установка лобового стекла <b>от 3240 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена и установка стекла люка <b>от 3240 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Замена и установка стекла двери <b>от 1800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion_item">
+                        <h3 class="title_block">Детейлинг</h3>
+                        <div class="info">
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Техническая мойка <b>от 240 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Полировка салона <b>от 200 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Полировка кузова <b>от 800 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                            <div class="info-text-wrap">
+                                <div class="info-text"><span>Химчистка салона <b>от 600 р.</b> </span></div>
+                                <div class="info-btn "><span class="mbtn2">Записаться</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--Конец БЛОКА-АККАРДЕОНА С ЦЕНАМИ-->
+
+        <!--Начало БЛОКА с карточками и надписью-->
+        <div class="block6">
+            <div class="container">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 offset-0">
+                    <div class="text-wrap">
+                        <div class="text1"><b>★</b> БЕСПЛАТНАЯ ДИАГНОСТИКА Range Rover по 56 параметрам. </div>
+                        <div class="text2"><b> ✔</b> Предложение действительно только при первом обращении в наш автосервис.</div>
+                    </div>
+                </div>
+                <div class="scard-wrap">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="scard">
+                                <span>Бесплатная</span>
+                                <div>Диагностика</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="scard">
+                                <span>Заявка</span>
+                                <div>На ремонт</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="scard">
+                                <span>Заявка</span>
+                                <div>на эвакуатор</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--Конец блока с карточками и надписью-->
+
+        <!--Начало блока с калькулятором-->
+        <div class="block7 calc-wrap">
+            <div class="container">
+                <div class="zag">Цены на обслуживание</div>
+                <div class="calc-head">
+                    <span class="calc-head-marka marka-activ">Discovery</span>
+                    <span class="calc-head-marka">Freelander</span>
+                    <span class="calc-head-marka">Defender</span>
+                    <span class="calc-head-marka">Discovery Sport</span>
+                    <span class="calc-head-marka">Range Rover</span>
+                    <span class="calc-head-marka">RR Sport</span>
+                    <span class="calc-head-marka">Evoque</span>
+                    <span class="calc-head-marka">Velar</span>
+                    <span class="calc-head-marka">Jaguar</span>
+                </div>
+                <!--Основная часть калькулятора (меняется по нажатию на выбор автомобилей или как угодно программисту)-->
+                <div class="calc-body-wrap calc-discovery">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-5 calc-img align-self-center"><img src="{{ asset('img/calc/LandeRover1.png') }}" alt="*"></div>
+                        <div class="col-lg-6 col-md-7 calc-body">
+                            <div class="zag">Расчет стоимости</div>
+                            <form action="#">
+                                <select name="#" id="#" class="calc-tipuslugi">
+                                    <option value="1" class="option">Выберите услугу</option>
+                                    <option value="2">Название услуги 1</option>
+                                    <option value="3">Длинное название услуги</option>
+                                    <option value="4">Очень очень длиное название услуги</option>
+                                    <option value="5">Услуга 5</option>
+                                    <option value="6">Название услуги 6</option>
+                                    <option value="7">Название услуги 7</option>
+                                </select>
+                                <span class="calc-input">
+										<b>Пробег авто:</b> <input type="text"> км
+									</span>
+                                <span class="calc-polzunok">
+										<span class="calc-span0">0</span>
+										<span class="calc-span1">500 000</span>
+										<input  type="range" min="0" max="500000" step="1" value="5000">
+									</span>
+                                <span class="calc-select-wrap">
+										<select name="#" id="#" class="calc-godvipuska">
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+											<option value="1">Укажите год выпуска</option>
+										</select>
+										<select name="#" id="#" class="calc-tipdvig">
+											<option value="1">Тип двигателя</option>
+											<option value="1">тип двигателя</option>
+											<option value="1">тип двигателя</option>
+											<option value="1">тип двигателя</option>
+
+										</select>
+									</span>
+                                <span class="btn-wrap"><input type="submit" class="mbtn" value="Рассчитать"></span>
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+        <!--Конец блока с калькулятором-->
+
+        <!--Светлый блок Преимущества + Слайдер-->
+        <div class="block8 preimblock">
+            <div class="container container2">
+                <div class="zag">«Ровер Сити» - автосервис Land Rover в Москве</div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="bslider">
+                            <div class="slider-for1">
+                                <div class="img"><img src="{{ asset('img/bslider1/1.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/3.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/4.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/5.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/6.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/7.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/8.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/9.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/10.jpg') }}" alt="*"></div>
+                            </div>
+                            <div class="slider-nav1">
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/1.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/3.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/4.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/5.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/6.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/7.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/8.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/9.jpg') }}" alt="*"></div>
+                                <div class="img"><img src="{{ asset('img/bslider1/mini/10.jpg') }}" alt="*"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-self-center">
+                        <div class="text-wrap">
+                            <p>ROVER CITY — крупнейший автосервис в Москве по ремонту и техническому обслуживанию автомобилей Land Rover и Jaguar.</p>
+                            <p>Компания предоставляет каждому клиенту качественные услуги инженеров-механиков и автослесарей, работающих на инновационном оборудовании.</p>
+                            <p>Независимо от модели и даты выпуска внедорожника ремонт и сервисное обслуживание Ленд Ровер проводятся в сжатые сроки согласно требованиям производителя с использованием оригинальных (лицензионных) запчастей и сертифицированных расходных материалов.</p>
+                        </div>
+                        <div class="preim-wrap">
+                            <span class="preim1">Специализированный автосервис Land Rover и Jaguar;</span>
+                            <span>Сохранение заводской гарантии;</span>
+                            <span>Дешевле, чем у дилера до 60%;</span>
+                            <span>Слесарный ремонт - 2 года гарантии;</span>
+                            <span>Кузовной ремонт - пожизненная гарантия;</span>
+                            <span class="preim6">Стоимость оговаривается до начала работ;</span>
+                            <span>Свой склад автозапчастей.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Конец блока Преимущества-->
+
+        <!--Блок с экспертами начало-->
+        <div class="block9 blockrabotniki">
+            <div class="container container2">
+                <div class="zag">Сертифицированные специалисты автосервиса «Ровер Сити»</div>
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="rabotniki-card">
+                            <div class="img"><img src="{{ asset('img/spec4.jpg') }}" alt="*"></div>
+                            <div class="text">
+                                <b>Анна</b>
+                                <span>Администратор</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="rabotniki-card">
+                            <div class="img">
+                                <img src="{{ asset('img/spec3.jpg') }}" alt="*">
+                                <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
+                            </div>
+                            <div class="text">
+                                <b>Дмитрий</b>
+                                <span>Мастер кузовного цеха</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="rabotniki-card">
+                            <div class="img">
+                                <img src="{{ asset('img/spec2.jpg') }}" alt="*">
+                                <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
+                            </div>
+                            <div class="text">
+                                <b>Константин</b>
+                                <span>Мастер слесарного цеха</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="rabotniki-card">
+                            <div class="img">
+                                <img src="{{ asset('img/spec1.jpg') }}" alt="*">
+                                <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
+                            </div>
+                            <div class="text">
+                                <b>Алексей</b>
+                                <span>Менеджер отдела запчастей</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--Конец блока Эксперты-->
+
+        <!--Блок ОТЗЫВЫ начало-->
+        <div class="block10 blockotziv">
+            <div class="container container2">
+                <div class="zag">Реальные отзывы от наших клиентов:</div>
+                <div class="footslider otziv-slider">
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/1.jpg') }}" alt="*">
+                        <div class="text">Ленд Ровер Дискавери 3</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/2.jpg') }}" alt="*">
+                        <div class="text">Range Rover суперчарджер</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/3.jpg') }}" alt="*">
+                        <div class="text">Фриландер 2</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/4.jpg') }}" alt="*">
+                        <div class="text">Ренж Ровер Спорт</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/5.jpg') }}" alt="*">
+                        <div class="text">Фриландер 2</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/6.jpg') }}" alt="*">
+                        <div class="text">Ленд ровер</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/7.jpg') }}" alt="*">
+                        <div class="text">Ленд ровер</div>
+                    </div>
+                    <div class="footslider-block otziv-slider-block">
+                        <img src="{{ asset('img/otzivi/8.jpg') }}" alt="*">
+                        <div class="text">Эвок</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bigslider-wrap bigslider-foot-wrap">
+                <div class="bigslider-close bigslider-foot-close">&#215;</div>
+                <div class="bslider-body">
+                    <div class="bigslider-for bigslider-foot-for">
+                        <div class="img"><img src="{{ asset('img/otzivi/1.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/2.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/3.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/4.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/5.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/6.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/7.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/otzivi/8.jpg') }}" alt="*"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Блок ОТЗЫВЫ конец-->
+
+        <!--Блок РЕЙТИНГИ начало-->
+        <div class="block13 blockreiting">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-6">
+                        <div class="reiting-card">
+                            <div class="img"><img src="{{ asset('img/rating-logo-zoon.png') }}" alt="*"></div>
+                            <div class="text">
+                                <span>рейтинг</span>
+                                <b>5 из 5</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="reiting-card">
+                            <div class="img"><img src="{{ asset('img/rating-logo-yandex.png') }}" alt="*"></div>
+                            <div class="text">
+                                <span>рейтинг</span>
+                                <b>5 из 5</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="reiting-card">
+                            <div class="img"><img src="{{ asset('img/rating-logo-google.png') }}" alt="*"></div>
+                            <div class="text">
+                                <span>рейтинг</span>
+                                <b>5 из 5</b>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <div class="reiting-card">
+                            <div class="img"><img src="{{ asset('img/rating-logo-2gis.png') }}" alt="*"></div>
+                            <div class="text">
+                                <span>рейтинг</span>
+                                <b>5 из 5</b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Блок РЕЙТИНГИ Конец-->
+
+        <!--Блок НАШИ РАБОТЫ начало-->
+        <div class="block11 blockraboti">
+            <div class="container container2">
+                <div class="zag">Наши работы:</div>
+                <div class="footslider rab-slider">
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/1.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/2.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/3.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/4.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/5.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/6.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/7.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/8.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/9.jpg') }}" alt="*">
+                    </div>
+                    <div class="footslider-block rab-slider-block">
+                        <img src="{{ asset('img/raboti/10.jpg') }}" alt="*">
+                    </div>
+                </div>
+            </div>
+            <div class="bigslider-wrap bigslider-rab-wrap">
+                <div class="bigslider-close bigslider-rab-close">&#215;</div>
+                <div class="bslider-body ">
+                    <div class="bigslider-for bigslider-rab-for">
+                        <div class="img"><img src="{{ asset('img/raboti/1.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/2.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/3.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/4.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/5.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/6.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/7.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/8.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/9.jpg') }}" alt="*"></div>
+                        <div class="img"><img src="{{ asset('img/raboti/10.jpg') }}" alt="*"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Блок НАШИ РАБОТЫ конец-->
+
+
+        <!--Блок СЕО начало-->
+        <div class="block12 blockseo">
+            <div class="container container2">
+                <div class="zag">Сервис Ленд Ровер: наши преимущества</div>
+                <p>Безупречная репутация и положительные отзывы клиентов сервис-центра ROVER CITY обусловлены массой бесспорных достоинств:</p>
+                <p>Надежность и качество. Сервис Land Rover — это гарантия безупречного качества с полным соответствием выполненных работ требованиям технических регламентов завода-производителя.</p>
+                <p>Полный спектр услуг. Мы реализуем весь перечень работ по сервисному облуживанию авто: от планового ТО или диагностики до капитального ремонта с покраской или тюнингом.</p>
+                <p>Сжатые сроки. Большие площади мастерских сервисного центра, оснащенные современным оборудованием, в сочетании с полным штатом профильных специалистов, а также наличие крупных складов оригинальных запчастей и сертифицированных расходных материалов позволяют оперативно предоставлять полный спектр услуг без длинных очередей.</p>
+                <p>Гибкие условия. Каждому клиенту мы предлагаем индивидуальный график обслуживания авто с учетом его требований и пожеланий.</p>
+                <div class="seo-none">
+                    <p>Техническая поддержка. Эксперты сервиса готовы бесплатно проконсультировать наших клиентов по всем вопросам эксплуатации и обслуживания внедорожников Ленд Ровер.</p>
+                    <p>Низкая стоимость. Несмотря на европейский уровень сервиса и гарантии, мы предлагаем разумные цены на все виды реализуемых услуг.</p>
+                    <p>Чтобы уточнить стоимость с учетом скидки и на выгодных условиях воспользоваться профессиональными услугами, свяжитесь с менеджерами сервиса Land Rover.</p>
+                    <p>Сервис-центр Land Rover — надежный партнер с безупречным европейским сервисом!</p>
+                    <div class="zag2">Сервис Land Rover: перечень услуг</div>
+                    <p>Специалисты сервиса имеют соответствующие сертификации на проведение всех видов ремонта и сервисного обслуживания Ленд Ровер в соответствии с гарантийной политикой европейского автоконцерна. Для каждой модификации авто предусмотрены технологические карты, разработанные с учетом требований и регламентов производителя.</p>
+                </div>
+                <div class="seobtn">Читать далее</div>
+            </div>
+        </div>
+        <!--Блок СЕО конец-->
+
+        <!--Подвал начало-->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-4 footer-logo align-self-center">
+                        <div class="footer-logo-img">
+                            <img src="{{ asset('img/logo.png') }}" alt="11">
+                        </div>
+                        <div class="footer-logo-social">
+                            <a href="https://www.youtube.com/channel/UCBh1PYncUgJyC9XI3ToDgEg/featured"><img src="{{ asset('img/yt.png') }}" alt="*"></a>
+                            <a href="https://www.instagram.com/rovercitymoscow"><img src="{{ asset('img/inst.png') }}" alt="*"></a>
+                            <a href="https://vk.com/rovercitymoscow"><img src="{{ asset('img/vk.png') }}" alt="*"></a>
+                            <a href="https://www.facebook.com/RoverCityMoscow?ref=bookmarks"><img src="{{ asset('img/fb.png') }}" alt="*"></a>
+                        </div>
+                        <div class="footer-text"><span>rovercity.ru © 2019</span>
+                            <small>Все права сохранены.</small>
+                            <small>Использование материалов сайта без согласования запрещено.</small>
+                        </div>
+                        <div class="mbtn">Заказать звонок</div>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-6 footer-nav">
+                        <a href="#" class="footer-nav-ssli">О компании</a>
+                        <a href="#" class="footer-nav-ssli">Услуги</a>
+                        <a href="#" class="footer-nav-ssli">Услуги</a>
+                        <a href="#" class="footer-nav-ssli">Цены</a>
+                        <a href="#" class="footer-nav-ssli">Наши работы</a>
+                        <a href="#" class="footer-nav-ssli">Отзывы</a>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-6 footer-nav">
+                        <a href="#" class="footer-nav-ssli">Статьи</a>
+                        <a href="#" class="footer-nav-ssli">Вопросы</a>
+                        <a href="#" class="footer-nav-ssli">Запчасти</a>
+                        <a href="#" class="footer-nav-ssli">Неисправности</a>
+                        <a href="#" class="footer-nav-ssli">Вакансии</a>
+                        <a href="#" class="footer-nav-ssli">Контакты</a>
+                    </div>
+                    <div class="col-lg-3 footer-form">
+                        <div class="footer-zag">Проконсультируем Вас</div>
+                        <form action="#">
+                            <input type="text">
+                            <input type="submit" class="mbtn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Подвал конец-->
+
+        <div class="mymodal-wrap">
+            <div class="mymodal-body">
+                <div class="mymodal-close">&#215;</div>
+                <form action="#">
+                    <b>Заголовок модального окна</b>
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="text" placeholder="Номер телефона">
+                    <input type="submit" class="mbtn modal-btn">
+                </form>
+            </div>
+        </div>
+
+
+
+    </div>
+{% endblock %}
