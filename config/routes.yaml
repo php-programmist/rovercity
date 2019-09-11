@@ -2,6 +2,15 @@ index:
     path: /
     controller: App\Controller\HomeController::index
 
+
+
+
+
+
+#special_offers:
+#    path: /import/special_offers/
+#    controller: App\Controller\ImportController::special_offers
+
 dynamic_pages:
     path: /{token}/
     controller: App\Controller\PageController::dynamic_pages
