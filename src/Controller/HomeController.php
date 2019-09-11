@@ -3,10 +3,9 @@
 namespace App\Controller;
 
 use App\Repository\ContentRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class HomeController extends AbstractController
+class HomeController extends BaseController
 {
     
     public function index(ContentRepository $content_repository)

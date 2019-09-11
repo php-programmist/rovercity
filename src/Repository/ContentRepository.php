@@ -18,6 +18,18 @@ class ContentRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Content::class);
     }
+    
+    public function findOneByNameAndBrand($name,$brand_alias): ?Content
+    {
+        return $this->createQueryBuilder('c')
+                    ->andWhere('c.name LIKE :name')
+                    ->setParameter('name', $name.'%')
+                    ->andWhere('c.path LIKE :brand_alias')
+                    ->setParameter('brand_alias', '%'.$brand_alias.'%')
+                    ->getQuery()
+                    ->getOneOrNullResult()
+            ;
+    }
 
     // /**
     //  * @return Content[] Returns an array of Content objects
