@@ -1,0 +1,290 @@
+.ymaps-layers-pane {
+    -ms-filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+    -o-filter: grayscale(1);
+    filter: grayscale(1);
+}
+
+.example-content {
+    padding: 0 !important;
+}
+
+.ymap-container {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background: url('../img/map/yandex-before-load.jpg') #ffffff no-repeat;
+    background-position: center center;
+    background-size: cover;
+    box-shadow: 0 0 2em 0 rgba(0, 0, 0, .2);
+}
+
+#map-yandex {
+    position: relative;
+    z-index: 7;
+    width: 100%;
+    height: 503px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/*Индикатор загрузки, который показывается до загрузки карты*/
+.loader {
+    position: absolute;
+    z-index: 150;
+    top: -100%;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: #000000;
+    transition: opacity .7s ease;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, .55);
+}
+
+.loader:after,
+.loader:before {
+    box-sizing: border-box;
+}
+
+.loader.is-active {
+    top: 0;
+    opacity: 1;
+}
+
+.loader-default:after {
+    position: absolute;
+    top: calc(50% - 24px);
+    left: calc(50% - 24px);
+    width: 48px;
+    height: 48px;
+    content: '';
+    -webkit-animation: rotation 1s linear infinite;
+    animation: rotation 1s linear infinite;
+    border: solid 8px #ffffff;
+    border-left-color: transparent;
+    border-radius: 50%;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@keyframes rotation {
+    from {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes blink {
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes blink {
+    from {
+        opacity: .5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.plashka_na_karte2 {display: none;}
+hr.hr_na_karte2 {display: none;}
+@media (max-width: 767px){
+    hr.hr_na_karte2  {
+        display: block;
+        border: none; /* Убираем границу */
+        background-color: #A77209; /* Цвет линии */
+        color: #A77209; /* Цвет линии для IE6-7 */
+        height: 1px; /* Толщина линии */
+    }
+    .plashka_na_karte2 {
+        display: block;
+        width: 269px;
+        height: 219px;
+        background-color:#fff;
+
+    }}
+
+.plashka_na_karte {
+    float:right;
+    margin-left: 70px;
+    margin-top:50px;
+    width: 269px;
+    height: 219px;
+    background-color:#fff;
+    z-index:8;
+    position:absolute;
+}
+
+
+.footer-contacts__contact__wrap::before {
+    margin-top: 10px;
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    background: url(../img/map/green-loc.png) center no-repeat;
+    background-size: contain;
+    width: 14px;
+    height: 20px;
+    box-sizing: inherit;
+    box-sizing: border-box;
+}
+
+.footer-contacts__contact__name {
+    font-size: 18px !important;
+    font-family: 'Proxima Nova ExtraBold';
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 26px;
+    padding: 0;
+    border: 0;
+
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: inherit;
+    display: block;
+    -webkit-box-direction: normal;
+
+    color: #212529;
+    text-align: left;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+}
+
+.footer-contacts__contact__adress {
+    margin-bottom: 10px;
+
+    margin-left: 26px;
+    padding: 0;
+    border: 0;
+    font: 15px/21px arial;
+    font-size: 100%;
+
+    vertical-align: baseline;
+
+}
+.footer-contacts__contact__phone a {
+    color: black;
+    margin-left: 26px;
+    font: 15px/21px arial;
+    font-size: 100%;
+}
+
+.footer-contacts__contact__time {
+    color: #6f6f6f;
+    font: 15px/21px arial;
+    font-size: 100%;
+    margin-left: 26px;
+    margin-bottom: 20px;
+}
+
+.footer-contacts__contact__button:hover {
+    background-color: #006ead;
+    text-decoration: none;
+    color: white;
+}
+
+.footer-contacts__contact__button {/*синий фон*/
+    padding: 20px;
+    display: block;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: #007cc3;
+    color: white;
+    font-family: "Proxima Nova SemiBold";
+    font-size: 14px;
+    position: relative;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%, 87% 0%);
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 87% 0%);
+}
+
+.footer-contacts__contact__button::after {/*строелочка*/
+    display: inline-block;
+    content: '';
+    margin-left: 10px;
+    background: url(../img/map/arrow-right.png) no-repeat center;
+    background-size: contain;
+    width: 20px;
+    height: 13px;
+    vertical-align: baseline;
+}
+
+.footer-contacts__contact__button::before {/*белая полосочка справа*/
+    position: absolute;
+    height: calc(100% + 11px);
+    width: 3px;
+    top: -6px;
+    right: 20px;
+    -webkit-transform: rotate(-30deg);
+    transform: rotate(-30deg);
+    background-color: white;
+    content: '';
+}
+
+.footer-contacts__contact__adresses:hover .footer-contacts__contact__button__content {
+    display: block;
+    opacity: 1;
+    -webkit-animation: showContent .3s ease-in;
+    animation: showContent .3s ease-in;
+}
+
+.footer-contacts__contact__button__content {/*всплывающий блок*/
+    -webkit-box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.65);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.65);
+    padding: 10px 15px;
+    display: none;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    max-width: 350px;
+    margin-top: -129px;
+    /*top: calc(-100% - 20px);*/
+    left: 0;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background: white;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+
+.footer-contacts__contact__button__content a {
+    text-align: center;
+    display: block;
+    margin-bottom: 9px;
+    color: black;
+    font-weight: bold;
+}
+.footer-contacts__contact__button__content a::after {
+    display: inline-block;
+    content: '';
+    margin-left: 10px;
+    background: url(../img/map/arrow-right.png) no-repeat center;
+    background-size: contain;
+    width: 20px;
+    height: 13px;
+    vertical-align: baseline;
+}

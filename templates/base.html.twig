@@ -13,6 +13,7 @@
             <link rel="stylesheet" href="{{ asset('css/slick.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/media.css') }}" >
+            <link rel="stylesheet" href="{{ asset('css/map.css') }}" >
         {% endblock %}
     </head>
     <body>
@@ -23,6 +24,7 @@
         {% block body %}
 
         {% endblock %}
+        {{ include('modules/map.html.twig') }}
         {{ include('modules/footer.html.twig') }}
         {{ include('modules/modal_window.html.twig') }}
     </div>
@@ -32,6 +34,7 @@
             <script src="{{ asset('js/jquery.glide.js') }}"></script>
             <script src="{{ asset('js/slick.min.js') }}"></script>
             <script src="{{ asset('js/script.js') }}"></script>
+            <script src="{{ asset('js/map.js') }}"></script>
         {% endblock %}
     </body>
 </html>
