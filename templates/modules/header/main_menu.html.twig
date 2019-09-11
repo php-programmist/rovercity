@@ -2,13 +2,13 @@
 <div class="header-menu1 header-menu">
     <div class="container">
         <div class="menu-wrap">
-            <a href="#">Прайс-лист</a>
-            <a href="#">Акции</a>
-            <a href="#">Гарантии</a>
-            <a href="#">Наши работы</a>
-            <a href="#">О нас</a>
-            <a href="#">Контакты</a>
-            <a href="#">Калькулятор</a>
+            <a href="{{ path('dynamic_pages',{"token":"price"}) }}">Прайс-лист</a>
+            <a href="{{ path('dynamic_pages',{"token":"skidki_i_akcii"}) }}">Акции</a>
+            <a href="{{ path('dynamic_pages',{"token":"garantii"}) }}">Гарантии</a>
+            <a href="{{ path('dynamic_pages',{"token":"naschiraboty"}) }}">Наши работы</a>
+            <a href="{{ path('dynamic_pages',{"token":"o_kompanii"}) }}">О нас</a>
+            <a href="{{ path('dynamic_pages',{"token":"kontakt"}) }}">Контакты</a>
+            <a href="{{ path('dynamic_pages',{"token":"calkuliator"}) }}">Калькулятор</a>
         </div>
     </div>
 </div>
