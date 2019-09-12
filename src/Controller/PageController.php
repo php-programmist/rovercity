@@ -39,6 +39,6 @@ class PageController extends AbstractController
         $template_name = $template_resolver->getTemplateName($token);
         return $this->render($template_name, $this->common_data_service->addCommonData([
             'content' => $content_entity,
-        ],'/'));
+        ],$token));
     }
 }
