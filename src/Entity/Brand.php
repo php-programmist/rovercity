@@ -42,6 +42,11 @@ class Brand
      * @ORM\OneToMany(targetEntity="App\Entity\BrandMenu", mappedBy="brand")
      */
     private $brandMenus;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $full_name;
     
     
 
@@ -130,6 +135,18 @@ class Brand
                 $brandMenu->setBrand(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFullName(): ?string
+    {
+        return $this->full_name;
+    }
+
+    public function setFullName(?string $full_name): self
+    {
+        $this->full_name = $full_name;
 
         return $this;
     }

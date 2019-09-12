@@ -21,7 +21,7 @@ class BrandResolverService
         $brands = $this->brand_repository->findAll();
         foreach ($brands as $brand) {
             if (strpos($token, $brand->getAlias())!==false) {
-                return $brand->getName();
+                return $brand->getFullName();
             }
         }
         return '';
