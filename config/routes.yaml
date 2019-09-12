@@ -2,6 +2,11 @@ index:
     path: /
     controller: App\Controller\PageController::index
 
+mail_callback:
+    path: /mail/callback/
+    methods: POST
+    controller: App\Controller\MailController::callback
+
 #special_offers:
 #    path: /import/special_offers/
 #    controller: App\Controller\ImportController::special_offers
