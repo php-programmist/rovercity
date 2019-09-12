@@ -17,9 +17,11 @@
         "symfony/yaml": "4.3.*"
     },
     "require-dev": {
+        "liip/functional-test-bundle": "^3.2",
         "sensiolabs/security-checker": "^6.0",
         "symfony/debug-pack": "^1.0",
         "symfony/maker-bundle": "^1.13",
+        "symfony/phpunit-bridge": "^4.3",
         "symfony/profiler-pack": "^1.0"
     },
     "config": {
