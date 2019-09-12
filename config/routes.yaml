@@ -1,11 +1,6 @@
 index:
     path: /
-    controller: App\Controller\HomeController::index
-
-
-
-
-
+    controller: App\Controller\PageController::index
 
 #special_offers:
 #    path: /import/special_offers/
