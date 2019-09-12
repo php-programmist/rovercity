@@ -33,4 +33,26 @@ class SpecialOffersServiceTest extends WebTestCase
         $this->assertIsArray($offers,'articles');
         $this->assertNotEmpty($offers,'articles');
     }
+    
+    /** @test */
+    public function diagnosticOfferWithBrand()
+    {
+        $offers = $this->special_offers_service->getSpecialOffers('land-rover-discovery');
+        foreach ($offers as $offer){
+            if ($offer->getName() === 'Бесплатная диагностика') {
+                $this->assertEquals('Комплексная диагностика Land Rover Discovery',$offer->getDescription());
+            }
+        }
+    }
+    
+    /** @test */
+    public function diagnosticOfferWithOutBrand()
+    {
+        $offers = $this->special_offers_service->getSpecialOffers('neispravnosti');
+        foreach ($offers as $offer){
+            if ($offer->getName() === 'Бесплатная диагностика') {
+                $this->assertEquals('Комплексная диагностика по 56 параметрам',$offer->getDescription());
+            }
+        }
+    }
 }

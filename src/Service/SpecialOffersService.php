@@ -22,9 +22,17 @@ class SpecialOffersService
         $this->brand_resolver = $brand_resolver;
     }
     
+    /**
+     * @param $token
+     *
+     * @return \App\Entity\SpecialOffer[]|array
+     */
     public function getSpecialOffers($token)
     {
-        $brand_name = $this->brand_resolver->getBrandName($token);
+        $brand_name = '';
+        if ($brand = $this->brand_resolver->getBrand($token)) {
+            $brand_name = $brand->getFullName();
+        }
         $criteria = ['published'=>1];
         if (strpos($token, 'neispravnosti') !== false || strpos($token, 'articles') !== false) {
             $criteria['hidden']=0;
