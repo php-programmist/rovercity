@@ -2,10 +2,9 @@
 
 namespace App\Controller;
 
+use App\Validator\EmailFormValidator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
-use Symfony\Component\HttpFoundation\RequestStack;
-use Symfony\Component\HttpFoundation\Response;
 
 class MailController extends AbstractController
 {
@@ -13,30 +12,36 @@ class MailController extends AbstractController
      * @var \Swift_Mailer
      */
     protected $mailer;
-    private $request;
+    
     private $email_addresses;
     
-    public function __construct(\Swift_Mailer $mailer, RequestStack $request_stack,ParameterBagInterface $params)
+    public function __construct(\Swift_Mailer $mailer, ParameterBagInterface $params)
     {
         $this->mailer = $mailer;
-        $this->request = $request_stack->getCurrentRequest();
         $this->email_addresses = $params->get('email_addresses');
-        
     }
     
-    public function callback()
+    public function callback(EmailFormValidator $validator)
     {
-        $name = $this->request->get('name');
-        $phone = $this->request->get('phone');
-        $subject = $this->request->get('subject');
-        $referer = @$_SERVER['HTTP_REFERER'];
+        $response=[];
+        $params = $validator->getValidatedValues(['name','phone','subject'],$errors);
+        if (count($errors)) {
+            $response['status'] = false;
+            $response['errors'] = $errors;
+            return $this->json($response);
+        }
+        $params['referer'] = @$_SERVER['HTTP_REFERER'];
         $template = 'emails/callback.html.twig';
         
-        $mes = 'ok';
-        if (! $this->sendMail($template,compact('name','phone','subject','referer'))) {
-            $mes = 'error';
+        if (! $this->sendMail($template,$params)) {
+            $response['status'] = false;
+            $response['errors'] = ["Возникла ошибка во время отправки сообщения"];
         }
-        return new Response($mes);
+        else{
+            $response['status'] = true;
+            $response['msg'] = "Спасибо, отправлено";
+        }
+        return $this->json($response);
     }
     
     private function sendMail($template,$params)
