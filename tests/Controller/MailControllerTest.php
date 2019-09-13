@@ -16,7 +16,10 @@ class MailControllerTest extends WebTestCase
         $name    = 'Алексей';
         $phone   = '+7(111)111-11-11';
         $crawler = $client->xmlHttpRequest('POST', '/mail/callback/',
-            ['name' => $name, 'phone' => $phone, 'subject' => $subject]);
+            ['name' => $name, 'phone' => $phone, 'subject' => $subject],
+            [],
+            ['HTTP_REFERER' => '/land-rover-discovery/',]
+        );
         $content = $client->getResponse()->getContent();
         $this->assertJson($content);
         $response = @json_decode($content);
