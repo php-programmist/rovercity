@@ -6,32 +6,28 @@ use Liip\FunctionalTestBundle\Test\WebTestCase;
 
 class PageControllerTest extends WebTestCase
 {
-    /** @test */
-    public function indexReturns200Code()
+    /**
+     * @dataProvider provideUrls
+     */
+    public function testPageIsSuccessful($url)
     {
-        $client = $this->createClient();
-        $client->request('GET','/');
-        $this->assertStatusCode(200,$client);
+        $client = self::createClient();
+        $client->request('GET', $url);
+        $this->assertTrue($client->getResponse()->isSuccessful(),"Wrong url is $url");
     }
     
-    /** @test */
-    public function brandReturns200Code()
-    {
-        $client = $this->createClient();
-        $client->request('GET','/land-rover-discovery/');
-        $this->assertStatusCode(200,$client);
-    }
     
-    /** @test */
-    public function serviceReturns200Code()
+    public function provideUrls()
     {
-        $client = $this->createClient();
-        $client->request('GET','/remont_land_rover/discovery_obsluzhivanie/');
-        $this->assertStatusCode(200,$client);
+        return [
+            ['/'],
+            ['/land-rover-discovery/'],
+            ['/remont_land_rover/discovery_obsluzhivanie/'],
+            ['/neispravnosti/'],
+        ];
     }
-    
-    /** @test */
-    public function wrongPathReturns404Code()
+   
+    public function testWrongPathReturns404Code()
     {
         $client = $this->createClient();
         $client->request('GET','/abrakadabra/discovery_obsluzhivanie/');
