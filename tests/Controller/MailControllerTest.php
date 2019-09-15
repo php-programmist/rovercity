@@ -60,7 +60,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = json_decode($content);
         $this->assertFalse($response->status);
-        $this->assertEquals($response->error,"Укажите имя");
+        $this->assertContains("Укажите имя",$response->errors);
     }
     
     public function testWrongName()
@@ -76,7 +76,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertFalse($response->status);
-        $this->assertEquals($response->error,"Укажите корректное имя");
+        $this->assertContains("Укажите корректное имя",$response->errors);
     }
     
     public function testEmptyPhone()
@@ -92,7 +92,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertFalse($response->status);
-        $this->assertEquals($response->error,"Укажите телефон");
+        $this->assertContains("Укажите телефон",$response->errors);
     }
     
     public function testWrongPhone()
@@ -108,7 +108,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertFalse($response->status);
-        $this->assertEquals($response->error,"Укажите корректный телефон");
+        $this->assertContains("Укажите корректный телефон",$response->errors);
     }
     
     public function testEmptySubjectIsOk()

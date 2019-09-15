@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Exception\ApiProblemException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Controller\ArgumentValueResolverInterface;
 use Symfony\Component\HttpKernel\ControllerMetadata\ArgumentMetadata;
@@ -36,7 +37,11 @@ class RequestDTOResolver implements ArgumentValueResolverInterface
         // throw bad request exception in case of invalid request data
         $errors = $this->validator->validate($dto);
         if (count($errors) > 0) {
-            throw new BadRequestHttpException( $errors[0]->getMessage());
+            $validation_messages = [];
+            foreach ($errors as $error) {
+                $validation_messages[] = $error->getMessage();
+            }
+            throw new ApiProblemException(400,"Ошибка валидации",$validation_messages);
         }
         
         yield $dto;

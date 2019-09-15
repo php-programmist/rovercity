@@ -2,10 +2,6 @@ index:
     path: /
     controller: App\Controller\PageController::index
 
-test:
-    path: /test/
-    controller: App\Controller\ExceptionController::index
-
 mail_callback:
     path: /mail/callback/
     methods: POST
