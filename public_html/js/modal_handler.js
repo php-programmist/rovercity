@@ -4,21 +4,21 @@ function validateNameAndPhone(name_field, phone_field) {
 	
 	if (!name_field.val() || name_test.test(name_field.val())) {
 		name_field.addClass('red_border');
-		console.log("Ошибка в имени");
+		// console.log("Ошибка в имени");
 		return false;
 	}
 	else{
 		name_field.removeClass('red_border');
-		console.log("Имя верное");
+		// console.log("Имя верное");
 	}
 	if (!phone_test.test(phone_field.val())) {
 		phone_field.addClass('red_border');
-		console.log("Ошибка в телефоне");
+		// console.log("Ошибка в телефоне");
 		return false;
 	}
 	else{
 		phone_field.removeClass('red_border');
-		console.log("Телефон верный");
+		// console.log("Телефон верный");
 	}
 	return true;
 }

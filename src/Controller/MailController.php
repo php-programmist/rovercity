@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
-use App\Validator\EmailFormValidator;
+use App\Request\CallbackFormRequest;
+use App\Request\MailRequestInterface;
+use App\Response\MailJsonResponse;
+use App\Service\RecipientResolverService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
@@ -12,64 +15,65 @@ class MailController extends AbstractController
      * @var \Swift_Mailer
      */
     protected $mailer;
+    /**
+     * @var MailJsonResponse
+     */
+    protected $response;
+    /**
+     * @var RecipientResolverService
+     */
+    protected $recipient_resolver;
     
     private $email_addresses;
     
-    public function __construct(\Swift_Mailer $mailer, ParameterBagInterface $params)
-    {
-        $this->mailer = $mailer;
-        $this->email_addresses = $params->get('email_addresses');
+    public function __construct(
+        \Swift_Mailer $mailer,
+        RecipientResolverService $recipient_resolver,
+        MailJsonResponse $response,
+        ParameterBagInterface $params
+    ) {
+        $this->mailer             = $mailer;
+        $this->response           = $response;
+        $this->recipient_resolver = $recipient_resolver;
+        $this->email_addresses    = $params->get('email_addresses');
     }
     
-    public function callback(EmailFormValidator $validator)
+    public function callback(CallbackFormRequest $request)
     {
-        $response=[];
-        $params = $validator->getValidatedValues(['name','phone','subject'],$errors);
-        if (count($errors)) {
-            $response['status'] = false;
-            $response['errors'] = $errors;
-            return $this->json($response);
+        if (count($request->getErrors())) {
+            return $this->response->fail($request->getErrors());
         }
-        $params['referer'] = @$_SERVER['HTTP_REFERER'];
         $template = 'emails/callback.html.twig';
         
-        if (! $this->sendMail($template,$params)) {
-            $response['status'] = false;
-            $response['errors'] = ["Возникла ошибка во время отправки сообщения"];
+        if ( ! $this->sendMail($template, $request)) {
+            return $this->response->fail(["Возникла ошибка во время отправки сообщения"]);
         }
-        else{
-            $response['status'] = true;
-            $response['msg'] = "Спасибо, отправлено";
-        }
-        return $this->json($response);
+        
+        return $this->response->success("Спасибо, отправлено");
     }
     
-    private function sendMail($template,$params)
+    /**
+     * @param string               $template
+     * @param MailRequestInterface $request
+     *
+     * @return int
+     */
+    private function sendMail(string $template, MailRequestInterface $request)
     {
-        $recipients = $this->getRecipients($params['phone']);
+        $recipients = $this->recipient_resolver->getRecipients($request->getPhone());
         
-        $message = (new \Swift_Message($params['subject']))
+        $message = (new \Swift_Message($request->getSubject()))
             ->setFrom($this->email_addresses['from'])
             ->setTo($recipients)
             ->setBody(
                 $this->renderView(
                     $template,
-                    $params
+                    ['request' => $request]
                 ),
                 'text/html'
             );
-    
+        
         return $this->mailer->send($message);
     }
     
-    private function getRecipients($phone)
-    {
-        $phoneCheck = preg_replace('~\D+~','',$phone);
-        
-        $recipients = $this->email_addresses['dev'];
-        if(!stristr($phoneCheck,'71111111111')){
-            $recipients = array_merge($recipients,$this->email_addresses['work']);
-        }
-        return $recipients;
-    }
 }

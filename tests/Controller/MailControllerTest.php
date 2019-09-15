@@ -9,7 +9,7 @@ class MailControllerTest extends WebTestCase
     public function testMailIsSentAndContentIsOk()
     {
         $client = static::createClient();
-        
+        $client->catchExceptions(false);
         // enables the profiler for the next request (it does nothing if the profiler is not available)
         $client->enableProfiler();
         $subject = 'Заказ звонка';
@@ -22,7 +22,8 @@ class MailControllerTest extends WebTestCase
         );
         $content = $client->getResponse()->getContent();
         $this->assertJson($content);
-        $response = @json_decode($content);
+        $response = json_decode($content);
+        
         $this->assertTrue($response->status);
         
         $mailCollector = $client->getProfile()->getCollector('swiftmailer');
@@ -48,7 +49,7 @@ class MailControllerTest extends WebTestCase
     public function testEmptyName()
     {
         $client = static::createClient();
-        
+        $client->catchExceptions(false);
         $subject = 'Заказ звонка';
         $name    = '';
         $phone   = '+7(111)111-11-11';
@@ -56,7 +57,7 @@ class MailControllerTest extends WebTestCase
             ['name' => $name, 'phone' => $phone, 'subject' => $subject]);
         $content = $client->getResponse()->getContent();
         $this->assertJson($content);
-        $response = @json_decode($content);
+        $response = json_decode($content);
         $this->assertFalse($response->status);
     }
     
@@ -105,17 +106,17 @@ class MailControllerTest extends WebTestCase
         $this->assertFalse($response->status);
     }
     
-    public function testEmptySubject()
+    public function testEmptySubjectIsOk()
     {
         $client = static::createClient();
         
-        $name    = 'Алексей';
-        $phone   = '+7(111)111-11-11';
+        $name    = ' Алексей';
+        $phone   = ' +7(111)111-11-11';
         $crawler = $client->xmlHttpRequest('POST', '/mail/callback/',
             ['name' => $name, 'phone' => $phone,]);
         $content = $client->getResponse()->getContent();
         $this->assertJson($content);
         $response = @json_decode($content);
-        $this->assertFalse($response->status);
+        $this->assertTrue($response->status);
     }
 }
