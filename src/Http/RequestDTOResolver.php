@@ -36,11 +36,7 @@ class RequestDTOResolver implements ArgumentValueResolverInterface
         // throw bad request exception in case of invalid request data
         $errors = $this->validator->validate($dto);
         if (count($errors) > 0) {
-            $messages = [];
-            foreach ($errors as $error) {
-                $messages[] = $error->getMessage();
-            }
-            $dto->setErrors($messages);
+            throw new BadRequestHttpException( $errors[0]->getMessage());
         }
         
         yield $dto;

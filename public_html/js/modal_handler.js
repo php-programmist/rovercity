@@ -48,7 +48,7 @@ $(document).ready(function() {
 					// phone_field.val('');
 				}
 				else{
-					alert("Возникли ошибки:\n - "+data.errors.join("\n - "));
+					alert("Возникла ошибка:\n - "+data.error);
 				}
 			},
 			error:(e)=>{

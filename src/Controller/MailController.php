@@ -40,15 +40,8 @@ class MailController extends AbstractController
     
     public function callback(CallbackFormRequest $request)
     {
-        if (count($request->getErrors())) {
-            return $this->response->fail($request->getErrors());
-        }
         $template = 'emails/callback.html.twig';
-        
-        if ( ! $this->sendMail($template, $request)) {
-            return $this->response->fail(["Возникла ошибка во время отправки сообщения"]);
-        }
-        
+        $this->sendMail($template, $request);
         return $this->response->success("Спасибо, отправлено");
     }
     

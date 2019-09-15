@@ -9,8 +9,6 @@ use Symfony\Component\Validator\ConstraintViolationList;
 
 class CallbackFormRequest implements RequestDTOInterface, MailRequestInterface
 {
-    
-    
     /**
      * @Assert\NotBlank(
      *     message="Укажите имя"
@@ -33,19 +31,13 @@ class CallbackFormRequest implements RequestDTOInterface, MailRequestInterface
      *     message="Укажите телефон"
      *     )
      * @Assert\Regex(
-     *     "#\+7\(\d{3}\)\d{3}-\d{2}-\d{2}#",     *
+     *     "#\+7\(\d{3}\)\d{3}-\d{2}-\d{2}#",
      *     message="Укажите корректный телефон"
      *     )
      */
     private $phone;
     private $subject;
     private $referer;
-    private $errors = [];
-    
-    /**
-     * @return array
-     */
-    
     
     public function __construct(Request $request)
     {
@@ -88,16 +80,4 @@ class CallbackFormRequest implements RequestDTOInterface, MailRequestInterface
         return $this->referer;
     }
     
-    public function getErrors(): array
-    {
-        return $this->errors;
-    }
-    
-    /**
-     * @param array $errors
-     */
-    public function setErrors(array $errors): void
-    {
-        $this->errors = $errors;
-    }
 }

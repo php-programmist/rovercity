@@ -33,3 +33,6 @@ services:
             - '@validator'
         tags:
             - { name: controller.request_value_resolver, priority: 50 }
+    App\EventListener\ExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }

@@ -9,7 +9,7 @@ class MailControllerTest extends WebTestCase
     public function testMailIsSentAndContentIsOk()
     {
         $client = static::createClient();
-        $client->catchExceptions(false);
+        //$client->catchExceptions(false);
         // enables the profiler for the next request (it does nothing if the profiler is not available)
         $client->enableProfiler();
         $subject = 'Заказ звонка';
@@ -25,6 +25,7 @@ class MailControllerTest extends WebTestCase
         $response = json_decode($content);
         
         $this->assertTrue($response->status);
+        $this->assertEquals($response->msg,"Спасибо, отправлено");
         
         $mailCollector = $client->getProfile()->getCollector('swiftmailer');
         
@@ -49,7 +50,7 @@ class MailControllerTest extends WebTestCase
     public function testEmptyName()
     {
         $client = static::createClient();
-        $client->catchExceptions(false);
+        //$client->catchExceptions(false);
         $subject = 'Заказ звонка';
         $name    = '';
         $phone   = '+7(111)111-11-11';
@@ -59,6 +60,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = json_decode($content);
         $this->assertFalse($response->status);
+        $this->assertEquals($response->error,"Укажите имя");
     }
     
     public function testWrongName()
@@ -74,6 +76,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertFalse($response->status);
+        $this->assertEquals($response->error,"Укажите корректное имя");
     }
     
     public function testEmptyPhone()
@@ -89,6 +92,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertFalse($response->status);
+        $this->assertEquals($response->error,"Укажите телефон");
     }
     
     public function testWrongPhone()
@@ -104,6 +108,7 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertFalse($response->status);
+        $this->assertEquals($response->error,"Укажите корректный телефон");
     }
     
     public function testEmptySubjectIsOk()
@@ -118,5 +123,6 @@ class MailControllerTest extends WebTestCase
         $this->assertJson($content);
         $response = @json_decode($content);
         $this->assertTrue($response->status);
+        $this->assertEquals($response->msg,"Спасибо, отправлено");
     }
 }

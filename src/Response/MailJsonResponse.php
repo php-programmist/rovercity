@@ -20,14 +20,14 @@ class MailJsonResponse
     }
     
     /**
-     * @param array $errors
+     * @param $error
      *
      * @return JsonResponse
      */
-    public function fail(array $errors)
+    public function fail($error)
     {
         $response['status'] = false;
-        $response['errors'] = $errors;
+        $response['error'] = $error;
         return new JsonResponse($response);
     }
 }
