@@ -740,7 +740,7 @@ body {
   font-weight: 700;
 }
 .block7 .calc-img img {
-  max-width: 100%;
+  width: 100%;
 }
 .block7 .calc-body * {
   outline: none!important;

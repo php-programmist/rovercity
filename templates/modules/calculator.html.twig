@@ -3,20 +3,19 @@
     <div class="container">
         <div class="zag">Цены на обслуживание</div>
         <div class="calc-head">
-            <span class="calc-head-marka marka-activ">Discovery</span>
-            <span class="calc-head-marka">Freelander</span>
-            <span class="calc-head-marka">Defender</span>
-            <span class="calc-head-marka">Discovery Sport</span>
-            <span class="calc-head-marka">Range Rover</span>
-            <span class="calc-head-marka">RR Sport</span>
-            <span class="calc-head-marka">Evoque</span>
-            <span class="calc-head-marka">Velar</span>
-            <span class="calc-head-marka">Jaguar</span>
+            {% for brand in brands %}
+            <span
+                    class="calc-head-marka {{ loop.index == 1 ? 'marka-activ' }}"
+                    data-img="{{ asset('img/'~brand.image) }}"
+            >{{ brand.name }}</span>
+            {% endfor %}
         </div>
         <!--Основная часть калькулятора (меняется по нажатию на выбор автомобилей или как угодно программисту)-->
         <div class="calc-body-wrap calc-discovery">
             <div class="row">
-                <div class="col-lg-6 col-md-5 calc-img align-self-center"><img src="{{ asset('img/calc/LandeRover1.png') }}" alt="*"></div>
+                <div class="col-lg-6 col-md-5 calc-img align-self-center">
+                    <img id="calc_brand_img" src="{{ asset('img/calc/LandeRover1.png') }}" alt="*">
+                </div>
                 <div class="col-lg-6 col-md-7 calc-body">
                     <div class="zag">Расчет стоимости</div>
                     <form action="#">
@@ -56,7 +55,7 @@
 										</select>
 									</span>
                         <span class="btn-wrap"><input type="submit" class="mbtn" value="Рассчитать"></span>
-
+                        <input type="hidden" name="brand_name" id="brand_name" value="{{ brands[0].name }}">
                     </form>
                 </div>
             </div>
