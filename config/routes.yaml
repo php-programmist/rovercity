@@ -10,6 +10,12 @@ mail_callback:
 #special_offers:
 #    path: /import/special_offers/
 #    controller: App\Controller\ImportController::special_offers
+#clear_content:
+#    path: /import/clear_content/
+#    controller: App\Controller\ImportController::clearContent
+#change_headers:
+#    path: /import/change_headers/
+#    controller: App\Controller\ImportController::changeHeaders
 
 dynamic_pages:
     path: /{token}/

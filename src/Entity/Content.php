@@ -154,6 +154,11 @@ class Content
      */
     private $ratingCount = '12';
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $h1;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -383,6 +388,18 @@ class Content
     public function setRatingCount(int $ratingCount): self
     {
         $this->ratingCount = $ratingCount;
+
+        return $this;
+    }
+
+    public function getH1(): ?string
+    {
+        return $this->h1;
+    }
+
+    public function setH1(?string $h1): self
+    {
+        $this->h1 = $h1;
 
         return $this;
     }
