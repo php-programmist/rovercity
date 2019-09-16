@@ -5,9 +5,8 @@ namespace App\Request;
 use App\Http\RequestDTOInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Component\Validator\ConstraintViolationList;
 
-class CallbackFormRequest implements RequestDTOInterface, MailRequestInterface
+class CallbackFormRequest implements RequestDTOInterface
 {
     /**
      * @Assert\NotBlank(
@@ -78,6 +77,15 @@ class CallbackFormRequest implements RequestDTOInterface, MailRequestInterface
     public function getReferer(): string
     {
         return $this->referer;
+    }
+    
+    public function toArray():array
+    {
+        $data = [];
+        foreach (get_object_vars($this) as $field => $value) {
+            $data[$field] =  $value;
+        }
+        return $data;
     }
     
 }
