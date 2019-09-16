@@ -4,21 +4,21 @@ function validateNameAndPhone(name_field, phone_field) {
 	
 	if (!name_field.val() || name_test.test(name_field.val())) {
 		name_field.addClass('red_border');
-		// console.log("Ошибка в имени");
+		 console.log("Ошибка в имени");
 		return false;
 	}
 	else{
 		name_field.removeClass('red_border');
-		// console.log("Имя верное");
+		 console.log("Имя верное");
 	}
 	if (!phone_test.test(phone_field.val())) {
 		phone_field.addClass('red_border');
-		// console.log("Ошибка в телефоне");
+		 console.log("Ошибка в телефоне");
 		return false;
 	}
 	else{
 		phone_field.removeClass('red_border');
-		// console.log("Телефон верный");
+		 console.log("Телефон верный");
 	}
 	return true;
 }
@@ -26,11 +26,15 @@ function validateNameAndPhone(name_field, phone_field) {
 $(document).ready(function() {
 	$(".phone-field").mask("+7(999)999-99-99");
 	
-	$('#callback-form').submit( (e) => {
+	setTimeout(()=>{
+		$(".baner-wraper").slideDown();
+	},40000);
+	
+	$('.callback-form').submit( function(e)  {
 		e.preventDefault();
-		let name_field = $('#callback-name');
-		let phone_field = $('#callback-phone');
-		let subject = $('.callback-modal-title').html();
+		let name_field = $(this).find('input[name=name]');
+		let phone_field = $(this).find('input[name=phone]');
+		let subject = $(this).find('.callback-modal-title').html();
 		
 		if (!validateNameAndPhone(name_field, phone_field)) {
 			return false;
@@ -43,7 +47,7 @@ $(document).ready(function() {
 			success:(data)=>{
 				if (data.status) {
 					alert(data.msg);
-					$('.mymodal-close').click();
+					$('.modal-close-action').click();
 					// name_field.val('');
 					// phone_field.val('');
 				}
@@ -56,5 +60,23 @@ $(document).ready(function() {
 				alert("Произошла ошибка")
 			}
 		});
+	});
+	
+	$(document).mouseup(function (e) {
+		var mymodal = $(".mymodal-body");
+		if (mymodal.has(e.target).length === 0) {
+			$('.mymodal-wrap').slideUp();
+		}
+	});
+	$('.modal-close-action').click(function (event) {
+		$(this).parent().parent().slideUp();
+	});
+	$('.open_modal').click(function (event) {
+		event.preventDefault();
+		let title = $(this).data('title');
+		if (title) {
+			$('.callback-modal-title').html(title);
+		}
+		$('.mymodal-wrap').slideDown();
 	});
 });

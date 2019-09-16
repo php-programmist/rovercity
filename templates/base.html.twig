@@ -14,6 +14,7 @@
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/media.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/map.css') }}" >
+            <link rel="stylesheet" href="{{ asset('css/popup-banner.css') }}" >
         {% endblock %}
     {{ include('modules/seo_scripts/yandex_metrika.html.twig') }}
     </head>
@@ -27,7 +28,8 @@
         {% endblock %}
         {{ include('modules/map.html.twig') }}
         {{ include('modules/footer.html.twig') }}
-        {{ include('modules/modal_window.html.twig') }}
+        {{ include('modules/popup/modal_window.html.twig') }}
+        {{ include('modules/popup/banner.html.twig') }}
     </div>
 
         {% block javascripts %}

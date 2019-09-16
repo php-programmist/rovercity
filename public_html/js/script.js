@@ -185,20 +185,4 @@ $('.read-more-btn').click(function (event) {
 	$('.read-more-btn').slideToggle(4);
 });
 
-$(document).mouseup(function (e) {
-	var mymodal = $(".mymodal-body");
-	if (mymodal.has(e.target).length === 0) {
-		$('.mymodal-wrap').hide();
-	}
-});
-$('.mymodal-close').click(function (event) {
-	$('.mymodal-wrap').hide();
-});
-$('.open_modal').click(function (event) {
-	event.preventDefault();
-	let title = $(this).data('title');
-	if (title) {
-		$('.callback-modal-title').html(title);
-	}
-	$('.mymodal-wrap').slideToggle(1);
-});
+

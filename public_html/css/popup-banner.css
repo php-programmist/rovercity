@@ -1,0 +1,709 @@
+.baner-wraper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 200;
+    left: 0;
+    top: 0;
+    padding-top: 12%;
+    display: none;
+}
+
+.baner-container {
+    position: relative;
+    width: 1978px;
+    margin-right: auto;
+    margin-left: auto;
+    background: url(../img/popup_banner/baner-bg.png) no-repeat left;
+    background-size: cover;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    font-size: 30px;
+}
+
+.baner-content {
+    width: 1440px;
+
+}
+
+.baner-logo2 {
+    display: none;
+}
+
+.baner-bigtext {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 140px;
+    margin-left: 80px;
+}
+
+.baner-text1 {
+    color: #f0f9fb;
+    font-family: "Arial";
+    font-size: 100px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 100px;
+}
+
+.baner-text1 span {
+    display: block;
+    color: #08d471;
+    font-size: 92px;
+}
+
+.baner-text2 {
+    padding-left: 25px;
+    font-size: 80px;
+    font-family: 'Roboto';
+    line-height: 100px;
+}
+
+.baner-text2 div {
+    color: #007d3a;
+    font-size: 94px;
+}
+
+.baner-text2 span {
+    font-size: 94px;
+    color: #007d3a;
+    font-weight: 700;
+}
+
+.baner-spis-wrap {
+    color: #ffffff;
+    font-family: "Arial";
+    font-size: 43px;
+    font-weight: 400;
+    margin-top: 120px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.baner-spis {
+    width: 1000px;
+    height: 65px;
+    background: url(../img/popup_banner/baner-spis-bg.png) center no-repeat;
+    -webkit-background-size: contain;
+    background-size: contain;
+    padding-left: 200px;
+    padding-top: 17px;
+    margin-bottom: 5px;
+}
+
+.baner-spis i {
+    display: block;
+}
+
+.baner-spis2 {
+    margin-left: 58px;
+}
+
+.baner-spis3 {
+    margin-left: 116px;
+}
+
+.baner-spis4 {
+    margin-left: 174px;
+}
+
+.baner-form {
+    text-align: center;
+    /*background: url(../img/popup_banner/baner-form-fon.png) center;*/
+    width: 486px;
+    color: #fff;
+}
+
+.baner-form-logo {
+    margin-top: 35px;
+    padding-top: 53px;
+    padding-bottom: 24px;
+    padding-left: 23px;
+    padding-right: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, .65)
+
+}
+
+.baner-form-logo img {
+    max-width: 100%;
+}
+
+.baner-form-text {
+    padding: 17px 0px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    color: #fff;
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: 400;
+    display: block;
+    background: rgba(0, 0, 0, .65)
+
+}
+
+.baner-form form {
+    background: rgba(0, 0, 0, .65);
+}
+
+.baner-form form label, .baner-form form input {
+    display: inline-block;
+
+}
+
+.baner-form form label {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 13px;
+    margin-top: 20px;
+}
+
+.baner-form form input {
+    height: 65px;
+    font-size: 30px;
+    /*background-color: rgba(255, 255, 255, .65);*/
+    outline: none;
+    color: #008546;
+    margin-bottom: 8px;
+    width: 412px;
+    border: none;
+}
+
+.baner-btn {
+    margin-top: 27px !important;
+    margin-bottom: 25px !important;
+    color: #fff !important; /*#008546 */
+    font-family: "Arial";
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.75px;
+    border: none;
+}
+
+.baner-btn:hover {
+    cursor: pointer;
+}
+
+.baner-close {
+    position: absolute;
+    /*top: -90px;
+    right: 0%;
+    font-size: 100px;*/
+    top: -19px;
+    right: -3%;
+    font-size: 42px;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.baner-close:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 1979px) {
+    .baner-container {
+        width: 1170px;
+        background-size: cover;
+
+    }
+
+    .baner-content {
+        width: 820px;
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .baner-bigtext {
+        margin-left: 50px;
+        margin-top: 80px;
+    }
+
+    .baner-text1 {
+        font-size: 54px;
+        line-height: 50px;
+    }
+
+    .baner-text1 span {
+        font-size: 49px;
+
+    }
+
+    .baner-text2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    .baner-text2 div, .baner-text2 span {
+        font-size: 49px;
+
+    }
+
+    .baner-spis-wrap {
+        font-size: 23px;
+        margin-top: 60px;
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+
+    .baner-spis {
+        width: 650px;
+        height: 46px; /*35*/
+        padding-left: 0;
+        padding-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .baner-spis i {
+        display: block;
+        padding-left: 100px;
+    }
+
+    .baner-spis2 {
+        margin-left: 35px;
+    }
+
+    .baner-spis3 {
+        margin-left: 70px;
+    }
+
+    .baner-spis4 {
+        margin-left: 115px;
+    }
+
+    .baner-form {
+        width: 320px;
+    }
+
+    .baner-form-logo {
+        margin-top: 25px;
+        padding-top: 25px;
+        padding-bottom: 14px;
+        text-align: center;
+        background: rgba(0, 0, 0, .65)
+
+    }
+
+    .baner-form-text {
+        padding: 8px 0px;
+        margin-top: 15px;
+        margin-bottom: 6px;
+        font-size: 18px;
+    }
+
+    .baner-form form label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .baner-form form input {
+        width: 230px;
+        height: 40px;
+        font-size: 18px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 5px;
+
+    }
+
+    .baner-btn {
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+        font-size: 35px;
+        font-weight: 400;
+        min-width: 260px;
+
+    }
+
+}
+
+@media (max-width: 1201px) {
+    .baner-close {
+        right: -4%;
+    }
+
+    .baner-container {
+        max-width: 960px;
+
+    }
+
+    .baner-content {
+        width: 690px;
+        max-width: 690px;
+    }
+
+    .baner-form {
+        width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .baner-bigtext {
+        margin-left: 30px;
+        margin-top: 50px;
+    }
+
+    .baner-text1 {
+        font-size: 38px;
+        line-height: 35px;
+    }
+
+    .baner-text1 span {
+        font-size: 35px;
+
+    }
+
+    .baner-text2 {
+        font-size: 35px;
+        line-height: 35px;
+    }
+
+    .baner-text2 div, .baner-text2 span {
+        font-size: 43px;
+
+    }
+
+    .baner-spis-wrap {
+        font-size: 20px;
+        margin-top: 50px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+
+    .baner-spis {
+        width: 540px;
+        height: 48px; /*30*/
+        padding-left: 0;
+        padding-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    .baner-spis i {
+        display: block;
+        padding-left: 100px;
+    }
+
+    .baner-form-logo {
+        margin-top: 15px;
+        padding-top: 15px;
+        padding-bottom: 4px;
+    }
+
+    .baner-form-text {
+        padding: 4px 0px;
+        margin-top: 10px;
+        margin-bottom: 6px;
+        font-size: 18px;
+    }
+
+    .baner-form form label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .baner-form form input {
+        width: 200px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 5px;
+
+    }
+
+    .baner-btn {
+        font-size: 35px;
+        min-width: 220px;
+    }
+
+}
+
+@media (max-width: 993px) {
+    .baner-container {
+        max-width: 720px;
+        background-position: top;
+
+    }
+
+    .baner-content {
+        width: 60%;
+        max-width: 690px;
+    }
+
+    .baner-form {
+        width: 39%;
+        margin-bottom: 15px;
+    }
+
+    .baner-spis-wrap {
+        display: none;
+    }
+
+    .baner-form-logo {
+        display: none;
+    }
+
+    .baner-form-text {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .baner-logo2 {
+        display: block;
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+
+    .baner-logo2 img {
+        max-width: 60%;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 10px;
+    }
+
+    .baner-bigtext {
+        margin-left: 30px;
+        margin-top: 10px;
+        background: rgba(0, 0, 0, .65);
+        margin-right: 15px;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .baner-text1 {
+        font-size: 52px;
+        line-height: 52px;
+    }
+
+    .baner-text1 span {
+        font-size: 48px;
+
+    }
+
+    .baner-text2 {
+        font-size: 52px;
+        line-height: 52px;
+        color: #07d471;
+    }
+
+    .baner-text2 div {
+        font-size: 59px;
+        color: #e9f2f5;
+
+    }
+
+    .baner-text2 span {
+        color: #07d471;
+    }
+
+}
+
+@media (max-width: 769px) {
+    .baner-container {
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .baner-content {
+        width: 100%;
+    }
+
+    .baner-bigtext {
+        width: 70%;
+        margin: auto;
+        margin-top: 10px;
+        background: rgba(0, 0, 0, .65);
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: block;
+    }
+
+    .baner-text1 span {
+        display: inline;
+        font-size: 28px;
+    }
+
+    .baner-text1 {
+        font-size: 28px;
+        line-height: 32px;
+
+    }
+
+    .baner-text2 {
+        font-size: 32px;
+        line-height: 32px;
+        color: #07d471;
+        margin: 0;
+        padding: 0;
+    }
+
+    .baner-text2 div {
+        display: inline;
+        font-size: 32px;
+        color: #e9f2f5;
+
+    }
+
+    .baner-text2 span {
+        color: #07d471;
+        font-size: 32px;
+    }
+
+    .baner-logo2 {
+        margin: auto;
+        width: 70%;
+        padding-top: 10px;
+    }
+
+    .baner-logo2 img {
+        max-width: 60%;
+        background: rgba(0, 0, 0, .65);
+        padding: 10px;
+    }
+
+    .baner-form {
+        margin-top: 0px;
+        padding-top: 5px;
+        width: 70%;
+        margin-left: 0px;
+        margin: auto;
+        padding-left: 0px;
+        margin-bottom: 10px;
+    }
+
+    .baner-form-text {
+        margin-top: 0;
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+
+    .baner-form form label {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .baner-form form input {
+        width: 65%;
+        height: 40px;
+        font-size: 20px;
+        margin-bottom: 5px;
+        padding: 0;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .baner-btn {
+        min-width: 75%;
+        margin-top: 15px;
+        min-height: 40px !important;
+        display: inline-block;
+        margin-bottom: 20px !important;
+
+    }
+
+}
+
+@media (max-width: 577px) {
+    .baner-container {
+        max-width: 98%;
+    }
+
+    .baner-content {
+        width: 100%;
+    }
+
+    .baner-bigtext {
+        width: 90%;
+        margin-top: 0px;
+        background: rgba(0, 0, 0, .65);
+        padding-left: 0px;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .baner-text1 span {
+        display: inline;
+        font-size: 17px;
+    }
+
+    .baner-text1 {
+        font-size: 17px;
+        line-height: 20px;
+
+    }
+
+    .baner-text2 {
+        font-size: 19px;
+        line-height: 20px;
+        color: #07d471;
+        margin: 0;
+        padding: 0;
+    }
+
+    .baner-text2 div {
+        display: inline;
+        font-size: 19px;
+        color: #e9f2f5;
+
+    }
+
+    .baner-text2 span {
+        color: #07d471;
+        font-size: 24px;
+    }
+
+    .baner-form {
+        margin: auto;
+        margin-top: 10px;
+        padding-top: 15px;
+        width: 90%;
+        padding-left: 0px;
+        margin-bottom: 10px;
+    }
+
+    .baner-form-text {
+        margin-top: 0px;
+        font-size: 18px;
+    }
+
+    .baner-form form label {
+        font-size: 16px;
+        margin-top: 0;
+        padding-top: 0;
+        margin-bottom: 5px;
+    }
+
+    .baner-form form input {
+        width: 70%;
+        height: 40px;
+        margin-bottom: 5px;
+    }
+
+    .baner-btn {
+        min-width: 80%;
+        margin-top: 10px;
+    }
+
+    .bsalefon {
+        display: none;
+    }
+
+}
