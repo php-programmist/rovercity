@@ -155,7 +155,7 @@ $('.otziv-slider-block').click(function (event) {
 	}
 });
 $('.bigslider-foot-close').click(function (event) {
-	$('.bigslider-foot-wrap').slideToggle(400);
+	$('.bigslider-foot-wrap').hide(400);
 	$('.header').slideToggle(400);
 });
 $(document).mouseup(function (e) {
