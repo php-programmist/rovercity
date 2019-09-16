@@ -313,9 +313,10 @@ body {
 .block2 .card {
   padding: 25px 40px;
   color: #46434a;
-  min-height: 245px;
+  min-height: 258px;
   margin-left: 20px;
   margin-right: 20px;
+  justify-content: space-between;
 }
 .block2 .card-zag {
   font-size: 20px;
@@ -348,7 +349,7 @@ body {
 .block2 .card .cena-wrap {
   position: relative;
   width: 100%;
-  margin-top: 25px;
+  margin-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
