@@ -26,18 +26,15 @@ class MailController extends AbstractController
      */
     protected $mail_sender;
     
-    private $email_addresses;
     
     public function __construct(
         
         RecipientResolverService $recipient_resolver,
         MailJsonResponse $response,
-        MailSenderService $mail_sender,
-        ParameterBagInterface $params
+        MailSenderService $mail_sender
     ) {
         $this->response           = $response;
         $this->recipient_resolver = $recipient_resolver;
-        $this->email_addresses    = $params->get('email_addresses');
         $this->mail_sender        = $mail_sender;
     }
     
@@ -50,8 +47,7 @@ class MailController extends AbstractController
                 $recipients,
                 $request->getSubject(),
                 $template,
-                $request->toArray(),
-                $this->email_addresses['from']
+                $request->toArray()
             );
         } catch (Error $e){
             return $this->response->fail([$e->getMessage()]);

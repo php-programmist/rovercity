@@ -4,8 +4,8 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    locale: 'ru'
     email_addresses:
-        from: 'robot@rovercity.ru'
         dev: ['kostin@qmotors.ru','webmaster@qmotors.ru']
         work: ['w.ww@mail.ru','service@rovercity.ru','master@rovercity.ru','direktor@rovercity.ru','seo@rovercity.ru']
 services:
@@ -33,3 +33,10 @@ services:
             - '@validator'
         tags:
             - { name: controller.request_value_resolver, priority: 50 }
+    Finesse\SwiftMailerDefaultsPlugin\SwiftMailerDefaultsPlugin:
+        tags:
+            - { name: swiftmailer.default.plugin }
+        arguments:
+            $defaults:
+                from:
+                    '%env(MAILER_FROM_EMAIL)%': '%env(MAILER_FROM_NAME)%'

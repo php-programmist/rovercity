@@ -27,18 +27,17 @@ class MailSenderService
      * @param string       $subject
      * @param string       $template
      * @param array        $data
-     * @param array|string $from
+     * @param mixed? $from
      *
      * @return int
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function sendMail($to, string $subject, string $template, array $data, $from)
+    public function sendMail($to, string $subject, string $template, array $data, $from=null)
     {
         
         $message = (new \Swift_Message($subject))
-            ->setFrom($from)
             ->setTo($to)
             ->setBody(
                 $this->twig->render(
@@ -47,7 +46,9 @@ class MailSenderService
                 ),
                 'text/html'
             );
-        
+        if ( ! empty($from)) {
+            $message->setFrom($from);
+        }
         return $this->mailer->send($message);
     }
 }
