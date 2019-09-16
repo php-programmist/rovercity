@@ -1081,10 +1081,8 @@ body {
   margin-top: 40px;
   margin-bottom: 20px;
 }
-.block12 .seo-none {
-  display: none;
-}
-.block12 .seobtn {
+
+.read-more-btn {
   font-weight: bold;
   color: #00844b;
   text-transform: uppercase;
@@ -1094,10 +1092,10 @@ body {
   position: relative;
   text-align: center;
 }
-.block12 .seobtn:hover {
+ .read-more-btn:hover {
   opacity: .9;
 }
-.block12 .seobtn:before {
+ .read-more-btn:before {
   content: '';
   position: absolute;
   width: 20px;
@@ -1365,4 +1363,16 @@ body {
 }
 .red_border{
   border: solid 2px red!important;
+}
+.blockseo{
+    overflow-y: hidden;
+    -webkit-transition: max-height .8s ease-in-out;
+    -moz-transition: max-height .8s ease-in-out;
+    -o-transition: max-height .8s ease-in-out;
+    transition: max-height .8s ease-in-out;
+    max-height: 2000px;
+}
+
+.collapsed {
+    max-height: 245px;
 }

@@ -180,10 +180,9 @@ $('.bigslider-rab-close').click(function (event) {
 	$('.header').slideToggle(400);
 });
 
-$('.seobtn').click(function (event) {
-	$('.seo-none').slideToggle(400);
-	$('.seobtn').slideToggle(4);
-	
+$('.read-more-btn').click(function (event) {
+	$('.blockseo').removeClass('collapsed');
+	$('.read-more-btn').slideToggle(4);
 });
 
 $(document).mouseup(function (e) {

@@ -14,12 +14,5 @@
     {{ include('modules/reviews.html.twig') }}
     {{ include('modules/rating.html.twig') }}
     {{ include('modules/our_works.html.twig') }}
-    <!--Блок СЕО начало-->
-    <div class="block12 blockseo">
-        <div class="container container2">
-            {{ content.text|raw }}
-            <div class="seobtn">Читать далее</div>
-        </div>
-    </div>
-    <!--Блок СЕО конец-->
+    {{ include('modules/seo_text.html.twig') }}
 {% endblock %}
