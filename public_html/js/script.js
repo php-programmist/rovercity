@@ -155,13 +155,13 @@ $('.otziv-slider-block').click(function (event) {
 	}
 });
 $('.bigslider-foot-close').click(function (event) {
-	$('.bigslider-foot-wrap').hide(400);
+	$('.bigslider-foot-wrap').fadeOut(400);
 	$('.header').slideToggle(400);
 });
 $(document).mouseup(function (e) {
 	var bs = $(".bigslider-for");
 	if (bs.has(e.target).length === 0) {
-		$('.bigslider-wrap').hide();
+		$('.bigslider-wrap').fadeOut();
 	}
 });
 
@@ -176,7 +176,7 @@ $('.rab-slider-block').click(function (event) {
 	}
 });
 $('.bigslider-rab-close').click(function (event) {
-	$('.bigslider-rab-wrap').slideToggle(400);
+	$('.bigslider-rab-wrap').fadeOut(400);
 	$('.header').slideToggle(400);
 });
 
