@@ -211,7 +211,10 @@ body {
   padding-bottom: 20px;
 }
 .block1 .content .zagolovki h4 {
-  font-size: 38px;
+  font-size: 34px;
+}
+.pb2 h4{
+  color:gold;
 }
 .block1 .content .pb1 {
   padding-bottom: 0;
@@ -220,8 +223,7 @@ body {
   font-size: 37px;
 }
 .utp-wrap {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin-top: 10px;
 }
 .utp-wrap .utp {
   width: 53%;
@@ -304,7 +306,7 @@ body {
   border: none!important;
 }
 .pb1 {
-  margin-top: 60px;
+  margin-top: 25px;
   padding-bottom: 0;
 }
 .block2 {

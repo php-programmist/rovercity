@@ -14,6 +14,7 @@
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/media.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/map.css') }}" >
+            <link rel="stylesheet" href="{{ asset('css/stars.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/popup-banner.css') }}" >
         {% endblock %}
     {{ include('modules/seo_scripts/yandex_metrika.html.twig') }}
@@ -29,7 +30,9 @@
         {{ include('modules/map.html.twig') }}
         {{ include('modules/footer.html.twig') }}
         {{ include('modules/popup/modal_window.html.twig') }}
+        {% if app.environment != 'dev' %}
         {{ include('modules/popup/banner.html.twig') }}
+        {% endif %}
     </div>
 
         {% block javascripts %}

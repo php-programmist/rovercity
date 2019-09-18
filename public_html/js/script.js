@@ -73,6 +73,8 @@ function f_acc() {
 $('.slider-for1').slick({
 	slidesToShow: 1,
 	slidesToScroll: 1,
+	autoplay: true,
+	autoplaySpeed: 5000,
 	fade: true,
 	asNavFor: '.slider-nav1',
 	responsive: [
