@@ -195,6 +195,7 @@ body {
 }
 .block1 {
   color: #fff;
+  min-height: 712px;
 }
 .block1 .content {
   z-index: 2;
@@ -719,7 +720,7 @@ body {
           transform: rotateY(180deg);
 }
 .block7 {
-  margin-top: 80px;
+  margin-top: 30px;
 }
 .block7 .calc-head {
   border-top: 0.5px solid #00844b;

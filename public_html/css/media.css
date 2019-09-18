@@ -180,8 +180,12 @@
   }
 }
 @media (max-width: 991px) {
-  .header-fix1 .header-adres {
+  .header3-whatsapp{
     display: none;
+  }
+  .header-fix1 .header-adres {
+    /*display: none;*/
+    font-size: 12px!important;
   }
   .header-fix1 .header-logo {
     text-align: left;
@@ -318,6 +322,9 @@
   }
 }
 @media (max-width: 767px) {
+  .h2, h2 {
+    font-size: 1.5rem;
+  }
   .header .header-fix1 {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -326,7 +333,10 @@
   .header .header-fix1 .header-logo {
     padding: 0;
     text-align: left;
+    display: flex;
+    justify-content: space-around;
   }
+
   .header .header-fix1 .header-logo-img {
     text-align: left;
   }
@@ -355,7 +365,7 @@
     padding-top: 7px;
     padding-bottom: 40px;
     position: fixed;
-    top: 52px;
+    top: 87px;
     width: 100%;
     margin: 0;
     left: 0;
@@ -402,13 +412,13 @@
     padding-bottom: 0;
   }
   .block1 .content .zagolovki h1 {
-    font-size: 33px;
+    font-size: 24px;
   }
   .block1 .content .zagolovki h4 {
-    font-size: 32px;
+    font-size: 22px;
   }
   .block1 .content .pb1 h4 {
-    font-size: 29px;
+    font-size: 20px;
   }
   .block1 .content .utp-wrap {
     margin-top: 40px;
@@ -496,27 +506,30 @@
   }
 }
 @media (max-width: 575px) {
+  .link_to_map{
+    display: none;
+  }
   .header .header-fix1 .header-logo-img {
     padding-left: 10px;
   }
   .header .header-fix1 .header-logo-img img {
     width: 200px;
   }
-  .header .header-fix1 .header-phone {
-    display: none;
+  .header .header-fix1 .header-phone a {
+    font-size: 12px;
   }
   .block1 .content .zagolovki {
     font-size: 35px;
     padding-bottom: 0;
   }
   .block1 .content .zagolovki h1 {
-    font-size: 28px;
+    font-size: 20px;
   }
   .block1 .content .zagolovki h4 {
-    font-size: 27px;
+    font-size: 19px;
   }
   .block1 .content .pb1 h4 {
-    font-size: 24px;
+    font-size: 18px;
   }
   .block1 .content .utp-wrap .utp span {
     font-size: 19px;
@@ -680,13 +693,13 @@
 }
 @media (max-width: 500px) {
   .block1 .content .zagolovki h1 {
-    font-size: 26px;
+    font-size: 19px;
   }
   .block1 .content .zagolovki h4 {
-    font-size: 26px;
+    font-size: 18px;
   }
   .block1 .content .pb1 h4 {
-    font-size: 23px;
+    font-size: 17px;
   }
   .block1 .content .utp-wrap .utp {
     width: 95%;
@@ -775,7 +788,7 @@
     padding-bottom: 5px;
   }
   .block1 .content .zagolovki h4 {
-    font-size: 22px;
+    font-size: 18px;
   }
   .block1 .content .pb1 {
     margin-top: 45px;
