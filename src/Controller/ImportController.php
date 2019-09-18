@@ -85,7 +85,9 @@ class ImportController extends AbstractController
         $pages = $content_repository->findAll();
         $counter = 0;
         //$pattern = '#<div class="h2_div_top">Прайс-лист на все виды работ:</div>[\s\S]+?<p>\[callback_buttons\]</p>#';
-        $pattern = '#<div class="h2_div_top">Прайс-лист на все виды работ:</div>[\s\S]+?(?=<h(3|2)>)#';
+        $pattern = '#<div class="h2_div_top">Прайс-лист на все виды работ:</div>[\s\S]+?<p></p>#';
+        // $pattern = '#<div class="h2_div_top">Прайс-лист на все виды работ:</div>[\s\S]+?(?=<h(3|2)>)#';
+        //$pattern = '#<div class="galerss_new_viks"[\s\S]+?</div>#';
         foreach ($pages as $page) {
             if (preg_match($pattern,$page->getText(),$matches)) {
                 
