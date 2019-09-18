@@ -6,7 +6,7 @@
             {% for brand in brands %}
             <span
                     class="calc-head-marka {{ loop.index == 1 ? 'marka-activ' }}"
-                    data-img="{{ asset('img/'~brand.image) }}"
+                    data-img="{{ asset('img/calculator/'~brand.image) }}"
             >{{ brand.name }}</span>
             {% endfor %}
         </div>
@@ -14,7 +14,7 @@
         <div class="calc-body-wrap calc-discovery">
             <div class="row">
                 <div class="col-lg-6 col-md-5 calc-img align-self-center">
-                    <img id="calc_brand_img" src="{{ asset('img/calc/LandeRover1.png') }}" alt="*">
+                    <img id="calc_brand_img" src="{{ asset('img/calculator/'~brands[0].image) }}" alt="*">
                 </div>
                 <div class="col-lg-6 col-md-7 calc-body">
                     <div class="zag">Расчет стоимости</div>
