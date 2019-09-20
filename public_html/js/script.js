@@ -77,6 +77,7 @@ $('.slider-for1').slick({
 	autoplaySpeed: 5000,
 	fade: true,
 	asNavFor: '.slider-nav1',
+	lazyLoad: 'ondemand',
 	responsive: [
 		{
 			breakpoint: 567,
@@ -94,6 +95,7 @@ $('.slider-nav1').slick({
 	arrows: false,
 	centerMode: false,
 	focusOnSelect: true,
+	lazyLoad: 'ondemand',
 	responsive: [
 		{
 			breakpoint: 767,

@@ -44,6 +44,8 @@
             <script src="{{ asset('js/script.js') }}"></script>
             <script src="{{ asset('js/modal_handler.js') }}"></script>
             <script src="{{ asset('js/calculator.js') }}"></script>
+            {{ include('modules/seo_scripts/lazy_load_images.html.twig') }}
+
         {% endblock %}
     </body>
 </html>

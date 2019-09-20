@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-3 col-sm-6">
                 <div class="rabotniki-card">
-                    <div class="img"><img src="{{ asset('img/spec4.jpg') }}" alt="*"></div>
+                    <div class="img"><img {{ lazy_load(asset('img/spec4.jpg')) }} alt="*"></div>
                     <div class="text">
                         <b>Анна</b>
                         <span>Администратор</span>
@@ -15,7 +15,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="rabotniki-card">
                     <div class="img">
-                        <img src="{{ asset('img/spec3.jpg') }}" alt="*">
+                        <img {{ lazy_load(asset('img/spec3.jpg')) }} alt="*">
                         <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
                     </div>
                     <div class="text">
@@ -28,7 +28,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="rabotniki-card">
                     <div class="img">
-                        <img src="{{ asset('img/spec2.jpg') }}" alt="*">
+                        <img {{ lazy_load(asset('img/spec2.jpg')) }} alt="*">
                         <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
                     </div>
                     <div class="text">
@@ -41,7 +41,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="rabotniki-card">
                     <div class="img">
-                        <img src="{{ asset('img/spec1.jpg') }}" alt="*">
+                        <img {{ lazy_load(asset('img/spec1.jpg')) }} alt="*">
                         <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
                     </div>
                     <div class="text">
