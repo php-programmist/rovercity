@@ -69,6 +69,18 @@ class Content
      * @ORM\Column(name="parent", type="integer", nullable=false)
      */
     private $parent = '0';
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="price_table", type="string",length=250, nullable=true)
+     */
+    private $priceTable;
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="price_section", type="integer", nullable=false)
+     */
+    private $priceSection = '0';
 
     /**
      * @var int
@@ -403,6 +415,37 @@ class Content
 
         return $this;
     }
-
-
+    
+    /**
+     * @return string
+     */
+    public function getPriceTable(): ?string
+    {
+        return $this->priceTable;
+    }
+    
+    /**
+     * @param string $priceTable
+     */
+    public function setPriceTable(string $priceTable): void
+    {
+        $this->priceTable = $priceTable;
+    }
+    
+    /**
+     * @return int
+     */
+    public function getPriceSection(): int
+    {
+        return $this->priceSection;
+    }
+    
+    /**
+     * @param int $priceSection
+     */
+    public function setPriceSection(int $priceSection): void
+    {
+        $this->priceSection = $priceSection;
+    }
+    
 }

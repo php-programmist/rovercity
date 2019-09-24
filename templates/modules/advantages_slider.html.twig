@@ -5,19 +5,19 @@
             <div class="col-lg-6 align-self-center">
                 <div class="text-block text-block1">
                     <div class="textzag">Сохранение заводской гарантии</div>
-                    <p>«Ровер Сити» - это сертифицированный автосервис по ремонту {{ brand is defined ? brand.fullName : 'Land Rover' }} и гарантия на автомобиль сохраняется</p>
+                    <p>«Ровер Сити» - это сертифицированный автосервис по ремонту {{ brand != null ? brand.fullName : 'Land Rover' }} и гарантия на автомобиль сохраняется</p>
                 </div>
                 <div class="text-block text-block2">
                     <div class="textzag">Гарантия 2 года на все работы</div>
-                    <p>На слесарный ремонт {{ brand is defined ? brand.fullName : '' }} - гарантия 2 года. Кузовной ремонт - пожизненная гарантия</p>
+                    <p>На слесарный ремонт {{ brand != null ? brand.fullName : '' }} - гарантия 2 года. Кузовной ремонт - пожизненная гарантия</p>
                 </div>
                 <div class="text-block text-block3">
-                    <div class="textzag">Крупнейший автосервис {{ brand is defined ? (brand.name == 'Jaguar'?'Jaguar':'Land Rover') : 'Land Rover' }} в Москве</div>
+                    <div class="textzag">Крупнейший автосервис {{ brand != null ? (brand.name == 'Jaguar'?'Jaguar':'Land Rover') : 'Land Rover' }} в Москве</div>
                     <p>Общая площадь 3000 м2 - более 30 автомобилей обслуживаются одновременно.</p>
                 </div>
                 <div class="text-block text-block4">
                     <div class="textzag">Свой склад запчастей</div>
-                    <p>Только оригинальные запчасти {{ brand is defined ? brand.fullName : '' }} и качественные аналоги. Все запчасти имеют сертификаты.</p>
+                    <p>Только оригинальные запчасти {{ brand != null ? brand.fullName : '' }} и качественные аналоги. Все запчасти имеют сертификаты.</p>
                 </div>
             </div>
             <div class="col-lg-6">

@@ -1,0 +1,13 @@
+{% if models_list %}
+    <div class="block3a block-models-list">
+        <div class="container container2">
+            <div class="row">
+                {% for model in models_list %}
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <a href="{{ path('dynamic_pages',{token:model.alias}) }}">{{ model.name }}</a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

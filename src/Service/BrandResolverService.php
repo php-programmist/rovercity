@@ -24,12 +24,31 @@ class BrandResolverService
      */
     public function getBrand($token):?Brand
     {
-        $brands = $this->brand_repository->findAll();
+        $brands = $this->brand_repository->findAllSortedByAliasLength();
         foreach ($brands as $brand) {
             if (strpos($token, $brand->getAlias())!==false) {
                 return $brand;
             }
         }
         return null;
+    }
+    
+    /**
+     * @param Brand $brand
+     *
+     * @return null|Brand[]
+     */
+    public function getModelsList($brand)
+    {
+        if ( ! $brand) {
+            return null;
+        }
+        if ($parent = $brand->getParent()) {
+            $models = $parent->getChildren();
+        }
+        else{
+            $models = $brand->getChildren();
+        }
+        return $models;
     }
 }

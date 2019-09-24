@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+
 use App\Repository\ContentRepository;
 use App\Service\CommonDataService;
 use App\Service\TemplateResolverService;
@@ -16,6 +17,7 @@ class PageController extends AbstractController
      */
     protected $common_data_service;
     
+    
     public function __construct(CommonDataService $common_data_service)
     {
         $this->common_data_service = $common_data_service;
@@ -26,6 +28,7 @@ class PageController extends AbstractController
         if (!$content_entity = $content_repository->findOneBy(['path' => '/'])) {
             throw new NotFoundHttpException();
         }
+        
         return $this->render('page/index.html.twig', $this->common_data_service->addCommonData([
             'content' => $content_entity,
         ],'/'));

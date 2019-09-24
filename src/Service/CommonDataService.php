@@ -2,7 +2,9 @@
 
 namespace App\Service;
 
+use App\Entity\Brand;
 use App\Repository\BrandRepository;
+use App\Model\PriceList\PriceList;
 
 class CommonDataService
 {
@@ -18,25 +20,35 @@ class CommonDataService
      * @var BrandResolverService
      */
     protected $brand_resolver;
+    /**
+     * @var PriceList
+     */
+    protected $price_list;
     
-    public function __construct(BrandRepository $brand_repository, SpecialOffersService $special_offers_service,BrandResolverService $brand_resolver)
+    public function __construct(BrandRepository $brand_repository, SpecialOffersService $special_offers_service,BrandResolverService $brand_resolver,PriceList $price_list)
     {
         $this->brand_repository = $brand_repository;
         $this->special_offers_service = $special_offers_service;
         $this->brand_resolver = $brand_resolver;
+        $this->price_list = $price_list;
     }
     
     public function getCommonData($token)
     {
-        $brands = $this->brand_repository->findAll();
+        $brands = $this->brand_repository->findParents();
         $brand = $this->brand_resolver->getBrand($token);
+        $percent = $brand?$brand->getPercent():0;
+        $price_list_sections = $this->price_list->getPriceData($token,$percent);
+        $models_list = $this->brand_resolver->getModelsList($brand);
         $special_offers = $this->special_offers_service->getSpecialOffers($token);
-        return compact('brands','brand','special_offers');
+        return compact('brands','brand','special_offers','price_list_sections','models_list');
     }
     
     public function addCommonData($params, $token)
     {
         return array_merge($params, $this->getCommonData($token));
     }
+    
+    
     
 }

@@ -18,6 +18,31 @@ class BrandRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Brand::class);
     }
+    
+    /**
+     * @return Brand[] Returns an array of Brand objects
+     */
+    
+    public function findParents()
+    {
+        return $this->createQueryBuilder('b')
+            ->andWhere('b.parent IS NULL OR b.parent=0')
+            ->orderBy('b.id', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    /**
+     * @return Brand[] Returns an array of Brand objects
+     */
+    public function findAllSortedByAliasLength()
+    {
+        $brands = $this->findAll();
+        usort($brands, function ($a,$b){
+            return strlen(trim($b->getAlias())) <=> strlen(trim($a->getAlias()));
+        });
+        return $brands;
+    }
 
     // /**
     //  * @return Brand[] Returns an array of Brand objects
