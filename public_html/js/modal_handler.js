@@ -9,7 +9,7 @@ function validateNameAndPhone(name_field, phone_field) {
 	}
 	else{
 		name_field.removeClass('red_border');
-		 console.log("Имя верное");
+		 // console.log("Имя верное");
 	}
 	if (!phone_test.test(phone_field.val())) {
 		phone_field.addClass('red_border');
@@ -18,7 +18,7 @@ function validateNameAndPhone(name_field, phone_field) {
 	}
 	else{
 		phone_field.removeClass('red_border');
-		 console.log("Телефон верный");
+		 // console.log("Телефон верный");
 	}
 	return true;
 }
