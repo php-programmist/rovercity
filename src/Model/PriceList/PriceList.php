@@ -4,6 +4,7 @@ namespace App\Model\PriceList;
 
 use App\Repository\ContentRepository;
 use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Query\QueryBuilder;
 
 class PriceList
 {
@@ -45,7 +46,14 @@ class PriceList
             ->execute()
             ->fetchAll(\PDO::FETCH_OBJ);
         if ($services) {
-            $price_list_sections[] = new PriceListSection($table,$services[0]->tip,$services,$percent);
+            foreach ($services as $service) {
+                if (empty($price_list_sections[$table])) {
+                    $price_list_sections[$table] = new PriceListSection($table,$service->tip,$service,$percent);
+                }
+                else{
+                    $price_list_sections[$table]->addService($service);
+                }
+            }
         }
         return $price_list_sections;
     }
@@ -54,15 +62,24 @@ class PriceList
     {
         $tables = $this->getAllTables();
         $price_list_sections = [];
+        $builders = [];
         foreach ($tables as $table => $section_name) {
-            $services = $this->connection
+            $builders[] = $this->connection
                 ->createQueryBuilder()
-                ->select('*')
+                ->select('rasdel,normo_chas,cena, "'.$table.'" as table_name')
                 ->from($table)
-                ->where('rasdel != ""')
-                ->execute()
-                ->fetchAll(\PDO::FETCH_OBJ);
-            $price_list_sections[] = new PriceListSection($table,$section_name,$services,$percent);
+                ->where('rasdel != ""');
+        }
+        $sql = $this->getUnionBuilders($builders);
+        $this->connection->setFetchMode(\PDO::FETCH_OBJ);
+        $services = $this->connection->fetchAll($sql);
+        foreach ($services as $service) {
+            if (empty($price_list_sections[$service->table_name])) {
+                $price_list_sections[$service->table_name] = new PriceListSection($service->table_name,$tables[$service->table_name],$service,$percent);
+            }
+            else{
+                $price_list_sections[$service->table_name]->addService($service);
+            }
         }
         return $price_list_sections;
     }
@@ -83,5 +100,19 @@ class PriceList
             'price_rr_stekla'                     => 'Замена стёкол',
             'price_rr_deteiling'                  => 'Детейлинг',
         ];
+    }
+    
+    /**
+     * @param QueryBuilder[] $builders
+     *
+     * @return string
+     */
+    private function getUnionBuilders($builders)
+    {
+        $queries=[];
+        foreach ($builders as $builder) {
+            $queries[] = $builder->getSQL();
+        }
+        return implode(' UNION ',$queries);
     }
 }

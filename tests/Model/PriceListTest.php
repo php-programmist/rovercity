@@ -25,7 +25,7 @@ class PriceListTest extends KernelTestCase
         $price_list_model = new PriceList($this->connection,$this->content_repository);
         $services = $price_list_model->getPriceData('land-rover-discovery');
         $this->assertIsArray($services);
-        $this->assertInstanceOf(PriceListSection::class,$services[0]);
+        $this->assertInstanceOf(PriceListSection::class,reset($services));
         $this->assertCount(12,$services);
     }
     
@@ -34,7 +34,7 @@ class PriceListTest extends KernelTestCase
         $price_list_model = new PriceList($this->connection,$this->content_repository);
         $services = $price_list_model->getPriceData('remont_land_rover/discovery_obsluzhivanie');
         $this->assertIsArray($services);
-        $this->assertInstanceOf(PriceListSection::class,$services[0]);
+        $this->assertInstanceOf(PriceListSection::class,reset($services));
         $this->assertCount(1,$services);
     }
 }
