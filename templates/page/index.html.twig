@@ -3,10 +3,10 @@
 {% block description %}{{ content.metaDesrc }}{% endblock %}
 {% block keywords %}{{ content.metaKeywords }}{% endblock %}
 {% block body %}
-    {{ include('modules/services.html.twig') }}
+    {{ service_menu|raw }}
     {{ include('modules/advantages_slider.html.twig') }}
     {{ include('modules/special_offers.html.twig') }}
-    {{ include('modules/pricelist.html.twig') }}
+    {{ price_list|raw }}
     {{ include('modules/callback_buttons.html.twig') }}
     {{ include('modules/calculator.html.twig') }}
     {{ include('modules/about_company.html.twig') }}

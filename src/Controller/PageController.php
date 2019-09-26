@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
-
+use App\Model\PriceList\PriceList;
+use App\Model\ServiceMenu\ServiceMenu;
 use App\Repository\ContentRepository;
+use App\Service\BrandResolverService;
 use App\Service\CommonDataService;
 use App\Service\TemplateResolverService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-
 
 class PageController extends AbstractController
 {
@@ -16,32 +17,75 @@ class PageController extends AbstractController
      * @var CommonDataService
      */
     protected $common_data_service;
+    /**
+     * @var ServiceMenu
+     */
+    protected $service_menu;
+    /**
+     * @var PriceList
+     */
+    protected $price_list;
+    /**
+     * @var BrandResolverService
+     */
+    protected $brand_resolver_service;
     
-    
-    public function __construct(CommonDataService $common_data_service)
-    {
-        $this->common_data_service = $common_data_service;
+    public function __construct(
+        CommonDataService $common_data_service,
+        ServiceMenu $service_menu,
+        PriceList $price_list,
+        BrandResolverService $brand_resolver_service
+    ) {
+        $this->common_data_service    = $common_data_service;
+        $this->service_menu           = $service_menu;
+        $this->price_list = $price_list;
+        $this->brand_resolver_service = $brand_resolver_service;
     }
     
-    public function index(ContentRepository $content_repository)
+    public function index()
     {
-        if (!$content_entity = $content_repository->findOneBy(['path' => '/'])) {
-            throw new NotFoundHttpException();
+        $service_menu = $this->service_menu->getServiceMenu();
+        $common_data  = $this->common_data_service->getCommonData('');
+        $price_list = $this->price_list->getFullPriceList();
+        $params       = array_merge($common_data, compact('service_menu','price_list'));
+        
+        return $this->render('page/index.html.twig', $params);
+    }
+    
+    public function dynamic_pages(
+        $token,
+        TemplateResolverService $template_resolver
+    ) {
+        $common_data = $this->common_data_service->getCommonData($token);
+        
+        $template_type = $template_resolver->getTemplateType($token);
+        switch ($template_type) {
+            case TemplateResolverService::BRAND_TYPE:
+                return $this->brandTemplate($common_data);
+                break;
+            case TemplateResolverService::SERVICE_TYPE:
+                return $this->serviceTemplate($common_data);
+                break;
+            default:
+                throw new NotFoundHttpException("Не определен тип страницы");
         }
         
-        return $this->render('page/index.html.twig', $this->common_data_service->addCommonData([
-            'content' => $content_entity,
-        ],'/'));
     }
     
-    public function dynamic_pages($token,ContentRepository $content_repository,TemplateResolverService $template_resolver)
+    protected function brandTemplate($common_data)
     {
-        if (!$content_entity = $content_repository->findOneBy(['path' => '/' . $token . '/'])) {
-            throw new NotFoundHttpException();
-        }
-        $template_name = $template_resolver->getTemplateName($token);
-        return $this->render($template_name, $this->common_data_service->addCommonData([
-            'content' => $content_entity,
-        ],$token));
+        $service_menu = $this->service_menu->getServiceMenu($common_data['brand']);
+        $price_list = $this->price_list->getFullPriceList($common_data['brand']);
+        $models_list = $this->brand_resolver_service->getModelsList($common_data['brand']);
+        $params       = array_merge($common_data, compact('service_menu','price_list','models_list'));
+        
+        return $this->render('page/brand.html.twig', $params);
+    }
+    
+    protected function serviceTemplate($common_data)
+    {
+        $price_list = $this->price_list->getSingleSectionPriceList($common_data['content'],$common_data['brand']);
+        $params       = array_merge($common_data, compact('price_list'));
+        return $this->render('page/service.html.twig', $params);
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Service;
 
-use App\Entity\Brand;
-use App\Model\ServiceMenu\ServiceMenu;
 use App\Repository\BrandRepository;
-use App\Model\PriceList\PriceList;
+
+use App\Repository\ContentRepository;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CommonDataService
 {
@@ -17,49 +17,44 @@ class CommonDataService
      * @var SpecialOffersService
      */
     protected $special_offers_service;
+    
+    /**
+     * @var ContentRepository
+     */
+    protected $content_repository;
     /**
      * @var BrandResolverService
      */
-    protected $brand_resolver;
-    /**
-     * @var PriceList
-     */
-    protected $price_list;
-    /**
-     * @var ServiceMenu
-     */
-    protected $service_menu;
+    protected $brand_resolver_service;
     
     public function __construct(
         BrandRepository $brand_repository,
         SpecialOffersService $special_offers_service,
-        BrandResolverService $brand_resolver,
-        PriceList $price_list,
-        ServiceMenu $service_menu
+        ContentRepository $content_repository,
+        BrandResolverService $brand_resolver_service
     ) {
         $this->brand_repository       = $brand_repository;
         $this->special_offers_service = $special_offers_service;
-        $this->brand_resolver         = $brand_resolver;
-        $this->price_list             = $price_list;
-        $this->service_menu           = $service_menu;
+        $this->content_repository     = $content_repository;
+        $this->brand_resolver_service = $brand_resolver_service;
     }
     
+    /**
+     * @param string $token
+     *
+     * @return array
+     */
     public function getCommonData($token)
     {
-        $brands                = $this->brand_repository->findParents();
-        $brand                 = $this->brand_resolver->getBrand($token);
-        $percent               = $brand ? $brand->getPercent() : 0;
-        $price_list_sections   = $this->price_list->getPriceData($token, $percent);
-        $models_list           = $this->brand_resolver->getModelsList($brand);
-        $special_offers        = $this->special_offers_service->getSpecialOffers($token);
-        $service_menu_sections = $this->service_menu->getMenuSections($brand ? $brand->getId() : 0);
+        $path = $token ? ('/' . $token . '/') : '/';
+        if ( ! $content = $this->content_repository->findOneBy(['path' => $path])) {
+            throw new NotFoundHttpException();
+        }
+        $brands         = $this->brand_repository->findParents();
+        $brand          = $this->brand_resolver_service->getBrand($token);
+        $special_offers = $this->special_offers_service->getSpecialOffers($token);
         
-        return compact('brands', 'brand', 'special_offers', 'price_list_sections', 'models_list', 'service_menu_sections');
-    }
-    
-    public function addCommonData($params, $token)
-    {
-        return array_merge($params, $this->getCommonData($token));
+        return compact('content', 'brands', 'special_offers', 'brand');
     }
     
 }

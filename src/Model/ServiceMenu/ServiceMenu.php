@@ -2,8 +2,10 @@
 
 namespace App\Model\ServiceMenu;
 
+use App\Entity\Brand;
 use Doctrine\DBAL\Connection;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Twig\Environment;
 
 class ServiceMenu
 {
@@ -11,10 +13,15 @@ class ServiceMenu
      * @var Connection
      */
     protected $connection;
+    /**
+     * @var Environment
+     */
+    protected $twig;
     
-    public function __construct(Connection $connection)
+    public function __construct(Connection $connection,Environment $twig)
     {
         $this->connection = $connection;
+        $this->twig = $twig;
     }
     
     public function getMenuSections($brand_id = 0)
@@ -22,6 +29,13 @@ class ServiceMenu
         $services = $this->getAllServicesByBrand($brand_id);
         return $this->groupBySections($services);
     }
+    
+    public function getServiceMenu(?Brand $brand=null)
+    {
+        $service_menu_sections = $this->getMenuSections($brand?$brand->getId():0);
+        return $this->twig->render('modules/services.html.twig',compact('brand','service_menu_sections'));
+    }
+    
     
     /**
      * @param int $brand_id

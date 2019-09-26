@@ -2,6 +2,8 @@
 
 namespace App\Tests\Service;
 
+use App\Entity\Brand;
+use App\Entity\Content;
 use App\Service\CommonDataService;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
@@ -24,16 +26,10 @@ class CommonDataServiceTest extends WebTestCase
         $this->assertIsArray($common_data['brands']);
         $this->assertNotEmpty($common_data['special_offers']);
         $this->assertIsArray($common_data['special_offers']);
-    }
-    
-    /** @test */
-    public function addCommonData()
-    {
-        $params = ['some_param'=>'some_value'];
-        $token = 'land-rover-discovery';
-        $common_data = $this->common_data_service->getCommonData($token);
-        $result = array_merge($params,$common_data);
-        $this->assertEquals($result,$this->common_data_service->addCommonData($params,$token));
+        $this->assertNotEmpty($common_data['content']);
+        $this->assertInstanceOf(Content::class,$common_data['content']);
+        $this->assertNotEmpty($common_data['brand']);
+        $this->assertInstanceOf(Brand::class,$common_data['brand']);
     }
     
     /** @test */
