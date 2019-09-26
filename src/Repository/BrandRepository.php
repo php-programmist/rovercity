@@ -27,6 +27,8 @@ class BrandRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('b')
             ->andWhere('b.parent IS NULL OR b.parent=0')
+            ->innerJoin('b.brandMenus', 'm')
+            ->addSelect('m')
             ->orderBy('b.id', 'ASC')
             ->getQuery()
             ->getResult()
