@@ -24,7 +24,7 @@ class TemplateResolverServiceTest extends WebTestCase
     /** @test */
     public function returnsServiceTemplate()
     {
-        $template_name = $this->template_resolver_service->getTemplateName('remont_land_rover/discovery_obsluzhivanie');
+        $template_name = $this->template_resolver_service->getTemplateName('land-rover-discovery/remont_hodovoi');
         $this->assertEquals('page/service.html.twig',$template_name);
     }
 }
