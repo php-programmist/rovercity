@@ -14,9 +14,31 @@ use Doctrine\Common\Persistence\ManagerRegistry;
  */
 class BrandMenuRepository extends ServiceEntityRepository
 {
+    protected static $cached_items=[];
+    
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, BrandMenu::class);
+    }
+    
+    /**
+     * @param string $path
+     *
+     * @return bool
+     */
+    public function isBrandMenu($path)
+    {
+        $path = trim($path,' /');
+        if (empty(self::$cached_items)) {
+            self::$cached_items = $this->findAll();
+        }
+        foreach (self::$cached_items as $item) {
+            if ($item->getAlias() === $path) {
+                return true;
+            }
+        }
+    
+        return false;
     }
 
     // /**

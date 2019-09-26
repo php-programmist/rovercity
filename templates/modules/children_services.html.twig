@@ -1,0 +1,12 @@
+{% if children %}
+    <div class="block3a block-children-services-list">
+        <div class="container container2">
+            <div class="row">
+                {% for child in children %}
+                    <div class="col-lg-4 col-md-6 col-12">
+                            <a href="{{ path('dynamic_pages',{token:child.path}) }}">{{ child.name }}</a></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}

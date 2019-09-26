@@ -3,6 +3,7 @@
 {% block description %}{{ content.metaDesrc|raw }}{% endblock %}
 {% block keywords %}{{ content.metaKeywords|raw }}{% endblock %}
 {% block body %}
+    {{ children_services|raw }}
     {{ include('modules/advantages_slider.html.twig') }}
     {{ include('modules/special_offers.html.twig') }}
     {{ price_list|raw }}
