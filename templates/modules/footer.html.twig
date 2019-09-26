@@ -4,13 +4,24 @@
         <div class="row">
             <div class="col-lg-3 col-sm-4 footer-logo align-self-center">
                 <div class="footer-logo-img">
-                    <img src="{{ asset('img/logo.png') }}" alt="11">
+                    <img {{ lazy_load(asset('img/logo.png')) }} alt="11">
                 </div>
                 <div class="footer-logo-social">
-                    <a href="https://www.youtube.com/channel/UCBh1PYncUgJyC9XI3ToDgEg/featured"><img src="{{ asset('img/yt.png') }}" alt="*"></a>
-                    <a href="https://www.instagram.com/rovercitymoscow"><img src="{{ asset('img/inst.png') }}" alt="*"></a>
-                    <a href="https://vk.com/rovercitymoscow"><img src="{{ asset('img/vk.png') }}" alt="*"></a>
-                    <a href="https://www.facebook.com/RoverCityMoscow?ref=bookmarks"><img src="{{ asset('img/fb.png') }}" alt="*"></a>
+                    <a href="https://www.youtube.com/channel/UCBh1PYncUgJyC9XI3ToDgEg/featured">
+                        <img {{ lazy_load(asset('img/yt.png')) }}
+                                alt="*">
+                    </a>
+                    <a href="https://www.instagram.com/rovercitymoscow">
+                        <img {{ lazy_load(asset('img/inst.png')) }}
+                                alt="*">
+                    </a>
+                    <a href="https://vk.com/rovercitymoscow">
+                        <img {{ lazy_load(asset('img/vk.png')) }} alt="*">
+                    </a>
+                    <a href="https://www.facebook.com/RoverCityMoscow?ref=bookmarks">
+                        <img {{ lazy_load(asset('img/fb.png')) }}
+                                alt="*">
+                    </a>
                 </div>
                 <div class="footer-text"><span>rovercity.ru © 2019</span>
                     <small>Все права сохранены.</small>
@@ -30,7 +41,8 @@
                 <a href="{{ path('dynamic_pages',{"token":"articles"}) }}" class="footer-nav-ssli">Статьи</a>
                 <a href="{{ path('dynamic_pages',{"token":"faq"}) }}" class="footer-nav-ssli">Вопросы</a>
                 <a href="{{ path('dynamic_pages',{"token":"zapchasti"}) }}" class="footer-nav-ssli">Запчасти</a>
-                <a href="{{ path('dynamic_pages',{"token":"neispravnosti"}) }}" class="footer-nav-ssli">Неисправности</a>
+                <a href="{{ path('dynamic_pages',{"token":"neispravnosti"}) }}"
+                   class="footer-nav-ssli">Неисправности</a>
                 <a href="{{ path('dynamic_pages',{"token":"vacancies"}) }}" class="footer-nav-ssli">Вакансии</a>
                 <a href="{{ path('dynamic_pages',{"token":"kontakt"}) }}" class="footer-nav-ssli">Контакты</a>
             </div>
@@ -39,7 +51,7 @@
                 <form class="callback-form" action="#">
                     <input type="text" name="phone" class="phone-field" placeholder="Номер телефона">
                     <input type="hidden" name="name" value="Не указано">
-                    <span  class="callback-modal-title d-none">Заказ консультации</span>
+                    <span class="callback-modal-title d-none">Заказ консультации</span>
                     <input type="submit" class="mbtn">
                 </form>
             </div>

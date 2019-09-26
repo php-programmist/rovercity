@@ -16,7 +16,7 @@
                 <div class="rabotniki-card">
                     <div class="img">
                         <img {{ lazy_load(asset('img/spec3.jpg')) }} alt="*">
-                        <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
+                        <img {{ lazy_load(asset('img/serts.jpg'),['serts']) }} alt="*">
                     </div>
                     <div class="text">
                         <b>Дмитрий</b>
@@ -29,7 +29,7 @@
                 <div class="rabotniki-card">
                     <div class="img">
                         <img {{ lazy_load(asset('img/spec2.jpg')) }} alt="*">
-                        <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
+                        <img {{ lazy_load(asset('img/serts.jpg'),['serts']) }} alt="*">
                     </div>
                     <div class="text">
                         <b>Константин</b>
@@ -42,7 +42,7 @@
                 <div class="rabotniki-card">
                     <div class="img">
                         <img {{ lazy_load(asset('img/spec1.jpg')) }} alt="*">
-                        <img src="{{ asset('img/serts.jpg') }}" alt="*" class="serts">
+                        <img {{ lazy_load(asset('img/serts.jpg'),['serts']) }} alt="*">
                     </div>
                     <div class="text">
                         <b>Алексей</b>

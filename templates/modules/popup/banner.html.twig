@@ -3,7 +3,7 @@
         <div class="baner-close modal-close-action">&times</div>
         <div class="baner-content">
             <div class="baner-logo2">
-                <img src="{{ asset('img/popup_banner/baner_logo.png') }}" alt="logo">
+                <img {{ lazy_load(asset('img/popup_banner/baner_logo.png')) }} alt="logo">
             </div>
             <div class="baner-bigtext">
                 <div class="baner-text1">
@@ -33,7 +33,7 @@
         </div>
         <div class="baner-form">
             <div class="baner-form-logo">
-                <img src="{{ asset('img/popup_banner/baner_logo.png') }}" alt="rovercity.ru">
+                <img {{ lazy_load(asset('img/popup_banner/baner_logo.png')) }} alt="rovercity.ru">
             </div>
             <span class="baner-form-text">Оставьте Ваши контакты <br> и мы свяжемся с Вами</span>
             <form name="popup-banner-form" class="callback-form" action="">
