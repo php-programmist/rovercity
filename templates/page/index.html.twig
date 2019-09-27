@@ -1,14 +1,14 @@
 {% extends('base.html.twig') %}
-{% block title %}{{ content.metaTitle }}{% endblock %}
-{% block description %}{{ content.metaDesrc }}{% endblock %}
-{% block keywords %}{{ content.metaKeywords }}{% endblock %}
+{% block title %}{{ content.metaTitle|raw }}{% endblock %}
+{% block description %}{{ content.metaDesrc|raw }}{% endblock %}
+{% block keywords %}{{ content.metaKeywords|raw }}{% endblock %}
 {% block body %}
     {{ service_menu|raw }}
     {{ include('modules/advantages_slider.html.twig') }}
     {{ include('modules/special_offers.html.twig') }}
     {{ price_list|raw }}
     {{ include('modules/callback_buttons.html.twig') }}
-    {{ include('modules/calculator.html.twig') }}
+    {#{{ include('modules/calculator.html.twig') }}#}
     {{ include('modules/about_company.html.twig') }}
     {{ include('modules/experts.html.twig') }}
     {{ include('modules/reviews.html.twig') }}

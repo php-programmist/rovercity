@@ -4,7 +4,9 @@ body {
     transition: all .3s;
     max-width: 100%;
 }
-
+h2{
+    font-size: 1.5em;
+}
 .mbtn {
     background-color: #00844b;
     color: #fff;
@@ -191,14 +193,14 @@ body {
 }
 
 #video-bg {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     overflow: hidden;
     z-index: 1;
-    background: url(../img/banner2.jpg) no-repeat #94a233;
+    /*background: url(../img/banner2.jpg) no-repeat #94a233;*/
     background-size: cover;
     background-color: transparent;
     min-height: 862px;
