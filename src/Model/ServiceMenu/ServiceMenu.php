@@ -50,7 +50,7 @@ class ServiceMenu
             ->from('services_map','m')
             ->leftJoin('m','services_sections','s','s.id = m.section_id')
             ->leftJoin('m','content','c','c.id = m.content_id')
-            ->where('brand_id = :brand_id')
+            ->andWhere('brand_id = :brand_id')
             ->setParameter(':brand_id',$brand_id)
             ->execute()
             ->fetchAll(\PDO::FETCH_CLASS,ServiceDTO::class);

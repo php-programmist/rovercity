@@ -52,7 +52,7 @@ class PageController extends AbstractController
     {
         $service_menu = $this->service_menu->getServiceMenu();
         $common_data  = $this->common_data_service->getCommonData('');
-        $price_list   = $this->price_list->getFullPriceList();
+        $price_list   = $this->price_list->getAllSectionsHtml();
         $params       = array_merge($common_data, compact('service_menu', 'price_list'));
         
         return $this->render('page/index.html.twig', $params);
@@ -81,7 +81,7 @@ class PageController extends AbstractController
     protected function brandTemplate($common_data)
     {
         $service_menu = $this->service_menu->getServiceMenu($common_data['brand']);
-        $price_list   = $this->price_list->getFullPriceList($common_data['brand']);
+        $price_list   = $this->price_list->getAllSectionsHtml($common_data['brand']);
         $models_list  = $this->brand_resolver_service->getModelsList($common_data['brand']);
         $params       = array_merge($common_data, compact('service_menu', 'price_list', 'models_list'));
         
@@ -90,7 +90,7 @@ class PageController extends AbstractController
     
     protected function serviceTemplate($common_data)
     {
-        $price_list        = $this->price_list->getSingleSectionPriceList($common_data['content'],
+        $price_list        = $this->price_list->getSingleSectionHtml($common_data['content'],
             $common_data['brand']);
         $children_services = $this->children_services->getChildrenServices($common_data['content']);
         $params            = array_merge($common_data, compact('price_list', 'children_services'));
