@@ -16,6 +16,8 @@
             <link rel="stylesheet" href="{{ asset('css/map.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/stars.css') }}" >
             <link rel="stylesheet" href="{{ asset('css/popup-banner.css') }}" >
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/mango_perezvon_style.css') }}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
         {% endblock %}
     {{ include('modules/seo_scripts/yandex_metrika.html.twig') }}
     </head>
@@ -45,6 +47,15 @@
             <script src="{{ asset('js/script.js') }}"></script>
             <script src="{{ asset('js/modal_handler.js') }}"></script>
             <script src="{{ asset('js/calculator.js') }}"></script>
+
+            <script src="https://mod.calltouch.ru/init.js?id=01fflb4r"></script>
+            <script type="text/javascript" src="//widget.mango-office.ru/js/c-t-w.min.js"></script>
+
+            <script src="{{ asset('js/mango_perezvon_js.js') }}"></script>
+            {{ include('modules/seo_scripts/comagic.html.twig') }}
+            {{ include('modules/seo_scripts/mango.html.twig') }}
+            {{ include('modules/seo_scripts/mango_callback.html.twig') }}
+            {{ include('modules/seo_scripts/liveinternet.html.twig') }}
             {{ include('modules/seo_scripts/lazy_load_images.html.twig') }}
 
         {% endblock %}
