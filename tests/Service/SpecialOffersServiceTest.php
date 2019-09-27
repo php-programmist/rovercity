@@ -51,7 +51,7 @@ class SpecialOffersServiceTest extends WebTestCase
         $offers = $this->special_offers_service->getSpecialOffers('neispravnosti');
         foreach ($offers as $offer){
             if ($offer->getName() === 'Бесплатная диагностика') {
-                $this->assertEquals('Комплексная диагностика по 56 параметрам',$offer->getDescription());
+                $this->assertEquals('Комплексная диагностика Land Rover',$offer->getDescription());
             }
         }
     }

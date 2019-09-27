@@ -29,7 +29,7 @@ class SpecialOffersService
      */
     public function getSpecialOffers($token)
     {
-        $brand_name = '';
+        $brand_name = 'Land Rover';
         if ($brand = $this->brand_resolver->getBrand($token)) {
             $brand_name = $brand->getFullName();
         }
