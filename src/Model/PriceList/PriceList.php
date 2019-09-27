@@ -41,12 +41,12 @@ class PriceList
         $this->brand_menu_repository = $brand_menu_repository;
     }
     
-    public function getAllSectionsHtml(?Brand $brand = null)
+    public function getAllSectionsHtml($price_list_header,?Brand $brand = null)
     {
         $percent             = $brand ? $brand->getPercent() : 0;
         $price_list_sections = $this->getAllSections($percent);
         
-        return $this->twig->render('modules/pricelist.html.twig', compact('brand', 'price_list_sections'));
+        return $this->twig->render('modules/pricelist.html.twig', compact('brand', 'price_list_sections','price_list_header'));
     }
     
     public function getSingleSectionHtml(Content $content, ?Brand $brand = null)
@@ -54,6 +54,7 @@ class PriceList
         if ( ! $content->getPriceTable()) {
             return '';
         }
+        $price_list_header = $content->getH1().' Цена:';
         $percent             = $brand ? $brand->getPercent() : 0;
         if ($this->brand_menu_repository->isBrandMenu($content->getPath())) {
             $price_list_sections = $this->getSingleSection($content->getPriceTable(), 0, $percent,$content->getName());
@@ -61,7 +62,7 @@ class PriceList
         else{
             $price_list_sections = $this->getSingleSection($content->getPriceTable(), $content->getPriceSection(), $percent);
         }
-        return $this->twig->render('modules/pricelist.html.twig', compact('brand', 'price_list_sections'));
+        return $this->twig->render('modules/pricelist.html.twig', compact('brand', 'price_list_sections','price_list_header'));
     }
     
     public function getSingleSection($table, $section_id, $percent,$section_name='')

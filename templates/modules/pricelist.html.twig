@@ -1,7 +1,7 @@
 <!--Начало БЛОКА-АККАРДЕОНА с ценами-->
 <div class="block5">
     <div class="container container2">
-        <div class="zag">Прайс лист на ремонт и обслуживание {{ brand != null ? brand.fullName : 'Land Rover' }}</div>
+        <div class="zag">{{ price_list_header }}</div>
         <div class="accordion">
             {% for price_list_section in price_list_sections %}
                 <div class="accordion_item {{ loop.first ? 'active_block':'' }} ">

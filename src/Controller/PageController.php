@@ -52,7 +52,7 @@ class PageController extends AbstractController
     {
         $service_menu = $this->service_menu->getServiceMenu();
         $common_data  = $this->common_data_service->getCommonData('');
-        $price_list   = $this->price_list->getAllSectionsHtml();
+        $price_list   = $this->price_list->getAllSectionsHtml('Прайс лист на ремонт и обслуживание Land Rover');
         $params       = array_merge($common_data, compact('service_menu', 'price_list'));
         
         return $this->render('page/index.html.twig', $params);
@@ -81,7 +81,7 @@ class PageController extends AbstractController
     protected function brandTemplate($common_data)
     {
         $service_menu = $this->service_menu->getServiceMenu($common_data['brand']);
-        $price_list   = $this->price_list->getAllSectionsHtml($common_data['brand']);
+        $price_list   = $this->price_list->getAllSectionsHtml($common_data['content']->getH1().' Цена:',$common_data['brand']);
         $models_list  = $this->brand_resolver_service->getModelsList($common_data['brand']);
         $params       = array_merge($common_data, compact('service_menu', 'price_list', 'models_list'));
         
