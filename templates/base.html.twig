@@ -30,6 +30,7 @@
         {{ include('modules/map.html.twig') }}
         {{ include('modules/footer.html.twig') }}
         {{ include('modules/popup/modal_window.html.twig') }}
+        {{ whatsapp_button|raw }}
         {% if app.environment != 'dev' %}
         {#{{ include('modules/popup/banner.html.twig') }}#}
         {% endif %}

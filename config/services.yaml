@@ -8,6 +8,9 @@ parameters:
     email_addresses:
         dev: ['kostin@qmotors.ru','webmaster@qmotors.ru']
         work: ['w.ww@mail.ru','service@rovercity.ru','master@rovercity.ru','direktor@rovercity.ru','seo@rovercity.ru']
+    whatsapp:
+        text: 'Прошу оценить стоимость кузовного ремонта'
+        phone: '79771250392'
 services:
     # default configuration for services in *this* file
     _defaults:
