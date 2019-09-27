@@ -41,36 +41,75 @@ class PriceList
         $this->brand_menu_repository = $brand_menu_repository;
     }
     
-    public function getAllSectionsHtml($price_list_header,?Brand $brand = null)
+    /**
+     * Возвращает отрендеренный прайс услу из всех таблиц
+     * Выводить на главной и страницах марок и моделей
+     * @param string $price_list_header - заголовок для прайса
+     * @param Brand|null $brand
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function getAllSectionsHtml($price_list_header, ?Brand $brand = null)
     {
         $percent             = $brand ? $brand->getPercent() : 0;
         $price_list_sections = $this->getAllSections($percent);
+        $price_list_header   = $this->preparePriceHeader($price_list_header);
         
-        return $this->twig->render('modules/pricelist.html.twig', compact('brand', 'price_list_sections','price_list_header'));
+        return $this->twig->render('modules/pricelist.html.twig',
+            compact('brand', 'price_list_sections', 'price_list_header'));
     }
     
+    /**
+     * Возвращает отрендеренный прайс услуг из таблицы, которая указана в $content->getPriceTable()
+     * Выводить на странице услуг
+     * @param Content    $content
+     * @param Brand|null $brand
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function getSingleSectionHtml(Content $content, ?Brand $brand = null)
     {
         if ( ! $content->getPriceTable()) {
             return '';
         }
-        $price_list_header = $content->getH1().' Цена:';
-        $percent             = $brand ? $brand->getPercent() : 0;
+        
+        $price_list_header = $this->preparePriceHeader($content->getH1() . ' Цена:');
+        
+        $percent = $brand ? $brand->getPercent() : 0;
         if ($this->brand_menu_repository->isBrandMenu($content->getPath())) {
-            $price_list_sections = $this->getSingleSection($content->getPriceTable(), 0, $percent,$content->getName());
+            if ( ! $services = $this->getSingleTable($content->getPriceTable(), 0)) {
+                return '';
+            }
+            $price_list_sections = $this->groupSubSections($services, $percent);
+        } else {
+            if ( ! $services = $this->getSingleTable($content->getPriceTable(), $content->getPriceSection())) {
+                return '';
+            }
+            $price_list_sections = $this->groupOneSection($services, $percent);
         }
-        else{
-            $price_list_sections = $this->getSingleSection($content->getPriceTable(), $content->getPriceSection(), $percent);
-        }
-        return $this->twig->render('modules/pricelist.html.twig', compact('brand', 'price_list_sections','price_list_header'));
+        
+        return $this->twig->render('modules/pricelist.html.twig',
+            compact('brand', 'price_list_sections', 'price_list_header'));
     }
     
-    public function getSingleSection($table, $section_id, $percent,$section_name='')
+    /**
+     * Возвращает массив услуг из одной таблицы
+     * @param $table - название таблицы услуг
+     * @param $section_id - номер раздела услуг. 0 - будут выбраны услугих из всех разделов
+     *
+     * @return mixed[]
+     */
+    public function getSingleTable($table, $section_id)
     {
-        $price_list_sections = [];
-        $query               = $this->connection
+        $query = $this->connection
             ->createQueryBuilder()
-            ->select('*')
+            ->select('rasdel,normo_chas,cena,nomer_rasdela,tip, "' . $table . '" as table_name')
             ->from('`' . $table . '`')
             ->andWhere("rasdel != ''");
         
@@ -81,19 +120,15 @@ class PriceList
         $services = $query->execute()
                           ->fetchAll(\PDO::FETCH_OBJ);
         
-        if ($services) {
-            foreach ($services as $service) {
-                if (empty($price_list_sections[$table])) {
-                    $price_list_sections[$table] = new PriceListSection($table, $section_name?:$service->tip, $service, $percent);
-                } else {
-                    $price_list_sections[$table]->addService($service);
-                }
-            }
-        }
-        
-        return $price_list_sections;
+        return $services;
     }
     
+    /**
+     * Возвращает массив секций услуг. Одна секция - одна таблица
+     * @param int $percent - на данный процент будет изменена цена всех услуг
+     *
+     * @return array
+     */
     public function getAllSections($percent = 0)
     {
         $tables              = $this->getAllTables();
@@ -115,6 +150,53 @@ class PriceList
                     $tables[$service->table_name], $service, $percent);
             } else {
                 $price_list_sections[$service->table_name]->addService($service);
+            }
+        }
+        
+        return $price_list_sections;
+    }
+    
+    /**
+     * Возвращает одну секцию из всего раздела
+     *
+     * @param $services
+     *
+     * @param $percent
+     *
+     * @return array
+     */
+    public function groupOneSection($services, $percent): array
+    {
+        $price_list_sections = [];
+        foreach ($services as $service) {
+            if (empty($price_list_sections[$service->table_name])) {
+                $price_list_sections[$service->table_name] = new PriceListSection($service->table_name, $service->tip,
+                    $service, $percent);
+            } else {
+                $price_list_sections[$service->table_name]->addService($service);
+            }
+        }
+        
+        return $price_list_sections;
+    }
+    
+    /**
+     * Группирует список услуг всего раздела в несколько секций
+     *
+     * @param $services
+     * @param $percent
+     *
+     * @return array
+     */
+    public function groupSubSections($services, $percent): array
+    {
+        $price_list_sections = [];
+        foreach ($services as $service) {
+            if (empty($price_list_sections[$service->nomer_rasdela])) {
+                $price_list_sections[$service->nomer_rasdela] = new PriceListSection($service->table_name,
+                    $service->tip, $service, $percent);
+            } else {
+                $price_list_sections[$service->nomer_rasdela]->addService($service);
             }
         }
         
@@ -152,5 +234,15 @@ class PriceList
         }
         
         return implode(' UNION ', $queries);
+    }
+    
+    /**
+     * @param $price_list_header
+     *
+     * @return null|string
+     */
+    protected function preparePriceHeader($price_list_header)
+    {
+        return preg_replace('# в москве#ui', '', $price_list_header);
     }
 }
