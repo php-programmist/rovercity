@@ -6,6 +6,13 @@
     <title>{% block title %}Автосервис Land Rover (Ленд Ровер) в Москве 🚩 «Ровер Сити» - специализированный сервис Land Rover{% endblock %}</title>
     <meta name="description" content="{% block description %}Автосервисе Land Rover (Ленд Ровер) в Москве. ⭐ Сервис европейского уровня. ✅ Бесплатная диагностика и эвакуатор. ✅ Выгода до 30%. ⭐ Ремонт и техническое обслуживание Land Rover по низкой цене ⏰ записаться в автосервис «Ровер Сити» ☎ 8(495)150-70-69.{% endblock %}">
     <meta name="keywords" content="{% block keywords %}{% endblock %}">
+
+    <meta property="og:title" content="{{ block('title') }}" />
+    <meta property="og:keywords" content="{{ block('keywords') }}" />
+    <meta property="og:description" content="{{ block('description') }}" />
+    <meta property="og:url" content="{{ app.request.uri }}" />
+    <meta name="yandex-verification" content="97f27b0bce5bb398" />
+    <meta name="google-site-verification" content="drFrdaIlpbN7KN7cB065vJ3owb5UI4wAmOfAZMnyk3U" />
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
