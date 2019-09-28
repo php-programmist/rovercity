@@ -65,6 +65,7 @@ class CommonDataService
         $common_data->brands          = $this->brand_repository->findParents();
         $common_data->brand           = $this->brand_resolver_service->getBrand($token);
         $common_data->brand_name      = $this->brand_resolver_service->getBrandName($common_data->brand, $token);
+        $common_data->root_brand_name = $this->brand_resolver_service->getRootBrandName($common_data->brand_name);
         $common_data->special_offers  = $this->special_offers_service->getSpecialOffers($common_data->brand_name,
             $token);
         $common_data->whatsapp_button = $this->whats_app_service->getWhatsAppButtonHtml();

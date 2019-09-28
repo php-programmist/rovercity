@@ -20,6 +20,9 @@ class CommonDataDTO
     /** @var string*/
     public $brand_name;
     
+    /** @var string*/
+    public $root_brand_name;
+    
     /** @var SpecialOffer[]*/
     public $special_offers;
     

@@ -65,4 +65,12 @@ class BrandResolverService
         
         return 'Land Rover';
     }
+    
+    public function getRootBrandName($brand_name)
+    {
+        if (stripos($brand_name, 'jaguar') !== false) {
+            return 'Jaguar';
+        }
+        return 'Land Rover';
+    }
 }
