@@ -3,3 +3,47 @@ RewriteEngine On RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
+
+#новые редиректы
+RewriteCond %{REQUEST_URI} ^/uslugi_land_rover/transmission/diagnostika_akpp/$
+RewriteRule ^.*$ https://rovercity.ru/uslugi_land_rover/diagnostika/diagnostika-kpp-land-rover/diagnostika-akpp-land-rover/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/uslugi_land_rover/diagnostika-kpp-land-rover/diagnostika-akpp-land-rover/$
+RewriteRule ^.*$ https://rovercity.ru/uslugi_land_rover/diagnostika/diagnostika-kpp-land-rover/diagnostika-akpp-land-rover/? [R=301,L]
+#выше двойной редирект
+
+RewriteCond %{REQUEST_URI} ^/uslugi_land_rover/remont_dvigateliya/remont_land_rover_toplivo/$
+RewriteRule ^.*$ https://rovercity.ru/uslugi_land_rover/remont_dvigateliya/remont_toplivnoj_sistem/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/uslugi_land_rover/tormoznaya_systema/remont_toplivnoj_sistem/$
+RewriteRule ^.*$ https://rovercity.ru/uslugi_land_rover/tormoznaya_systema/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_land_rover/freelander/freelander_remont_dvigatelja/zamena-rolika-natyaghitelya-privodnogo-remnya/$
+RewriteRule ^.*$ https://rovercity.ru/remont_land_rover/freelander/to/zamena-privodnyh-remney/zamena-rolika-natyaghitelya-privodnogo-remnya/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_land_rover/range_rover/dvigatel/zamena-rolika-natyaghitelya-privodnogo-remnya-range-rover/$
+RewriteRule ^.*$ https://rovercity.ru/remont_land_rover/range_rover/to/zamena-rolika-natyaghitelya-privodnogo-remnya-range-rover/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_jaguar/polnaya-diagnostika/diagnostika-hodovoy-chasti/diagnostika-tormoznoy-sistemy/$
+RewriteRule ^.*$ https://rovercity.ru/remont_jaguar/remont-tormoznoy-sistemy/diagnostika-tormoznoy-sistemy/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_land_rover/discovery_4/tormoznaya_systema/zamena-tormoznoy-ghidkosti-Land-Rover-Discovery-4/$
+RewriteRule ^.*$ https://rovercity.ru/remont_land_rover/discovery_4/to/zamena-tormoznoy-ghidkosti-Land-Rover-Discovery-4/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/land-rover-discovery-3/remont-tormoznoy-sistemy/zamena-tormoznoy-ghidkosti/$
+RewriteRule ^.*$ https://rovercity.ru/land-rover-discovery-3/tehnicheskoe-obslughivanie/zamena-tormoznoy-ghidkosti/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/land-rover-discovery-3/transmissija/zamena-masla-v-reduktore/$
+RewriteRule ^.*$ https://rovercity.ru/land-rover-discovery-3/transmissija/remont-reduktorov/zamena-masla-v-reduktore/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_land_rover/freelander/polnaya-diagnostika/diagnostika-hodovoy-chasti/diagnostika-rulevogo-upravleniya/$
+RewriteRule ^.*$ https://rovercity.ru/remont_jaguar/remont-hodovoy-chasti/remont-rulevogo-upravleniya/diagnostika-rulevogo-upravleniya/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_jaguar/polnaya-diagnostika/diagnostika-hodovoy-chasti/diagnostika-rulevogo-upravleniya/$
+RewriteRule ^.*$ https://rovercity.ru/remont_jaguar/remont-hodovoy-chasti/remont-rulevogo-upravleniya/diagnostika-rulevogo-upravleniya/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/land-rover-discovery-3/diagnostika/diagnostika-hodovoy/diagnostika-rulevogo-upravleniya/$
+RewriteRule ^.*$ https://rovercity.ru/land-rover-discovery-3/remont-hodovoy/rulevoe-upravlenie/diagnostika-rulevogo-upravleniya/? [R=301,L]
+
+RewriteCond %{REQUEST_URI} ^/remont_jaguar/remont-elektrooborudovaniya/remont-electroprovodki/$
+RewriteRule ^.*$ https://rovercity.ru/remont_jaguar/remont-elektrooborudovaniya/? [R=301,L]
