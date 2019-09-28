@@ -145,7 +145,7 @@
 }
 
 .callback-bt_perezvon {
-
+    -webkit-appearance: unset;
     background: #e94742;
     border: 2px solid #e94742;
     border-radius: 50%;
