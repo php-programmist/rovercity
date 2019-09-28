@@ -23,16 +23,13 @@ class SpecialOffersService
     }
     
     /**
-     * @param $token
+     * @param string $brand_name
+     * @param string $token
      *
      * @return \App\Entity\SpecialOffer[]|array
      */
-    public function getSpecialOffers($token)
+    public function getSpecialOffers(string $brand_name,string $token)
     {
-        $brand_name = 'Land Rover';
-        if ($brand = $this->brand_resolver->getBrand($token)) {
-            $brand_name = $brand->getFullName();
-        }
         $criteria = ['published'=>1];
         if (strpos($token, 'neispravnosti') !== false || strpos($token, 'articles') !== false) {
             $criteria['hidden']=0;

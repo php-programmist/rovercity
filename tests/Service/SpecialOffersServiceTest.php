@@ -17,7 +17,7 @@ class SpecialOffersServiceTest extends WebTestCase
     /** @test */
     public function returnsAllOffers()
     {
-        $offers = $this->special_offers_service->getSpecialOffers('land-rover-discovery');
+        $offers = $this->special_offers_service->getSpecialOffers('Land Rover Discovery','land-rover-discovery');
         $this->assertIsArray($offers);
         $this->assertNotEmpty($offers);
     }
@@ -25,11 +25,11 @@ class SpecialOffersServiceTest extends WebTestCase
     /** @test */
     public function returnsNotHiddenOffers()
     {
-        $offers = $this->special_offers_service->getSpecialOffers('neispravnosti');
+        $offers = $this->special_offers_service->getSpecialOffers('Land Rover','neispravnosti');
         $this->assertIsArray($offers,'neispravnosti');
         $this->assertNotEmpty($offers,'neispravnosti');
     
-        $offers = $this->special_offers_service->getSpecialOffers('articles');
+        $offers = $this->special_offers_service->getSpecialOffers('Land Rover','articles');
         $this->assertIsArray($offers,'articles');
         $this->assertNotEmpty($offers,'articles');
     }
@@ -37,7 +37,7 @@ class SpecialOffersServiceTest extends WebTestCase
     /** @test */
     public function diagnosticOfferWithBrand()
     {
-        $offers = $this->special_offers_service->getSpecialOffers('land-rover-discovery');
+        $offers = $this->special_offers_service->getSpecialOffers('Land Rover Discovery','land-rover-discovery');
         foreach ($offers as $offer){
             if ($offer->getName() === 'Бесплатная диагностика') {
                 $this->assertEquals('Комплексная диагностика Land Rover Discovery',$offer->getDescription());
@@ -48,7 +48,7 @@ class SpecialOffersServiceTest extends WebTestCase
     /** @test */
     public function diagnosticOfferWithOutBrand()
     {
-        $offers = $this->special_offers_service->getSpecialOffers('neispravnosti');
+        $offers = $this->special_offers_service->getSpecialOffers('Land Rover','neispravnosti');
         foreach ($offers as $offer){
             if ($offer->getName() === 'Бесплатная диагностика') {
                 $this->assertEquals('Комплексная диагностика Land Rover',$offer->getDescription());

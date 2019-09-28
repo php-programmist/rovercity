@@ -58,10 +58,11 @@ class CommonDataService
         }
         $brands         = $this->brand_repository->findParents();
         $brand          = $this->brand_resolver_service->getBrand($token);
-        $special_offers = $this->special_offers_service->getSpecialOffers($token);
+        $brand_name     = $this->brand_resolver_service->getBrandName($brand,$token);
+        $special_offers = $this->special_offers_service->getSpecialOffers($brand_name,$token);
         $whatsapp_button = $this->whatsapp_button_service->getWhatsappButtonHtml();
         
-        return compact('content', 'brands', 'special_offers', 'brand','whatsapp_button');
+        return compact('content', 'brands', 'special_offers', 'brand','whatsapp_button','brand_name');
     }
     
 }

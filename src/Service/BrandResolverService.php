@@ -51,4 +51,15 @@ class BrandResolverService
         }
         return $models;
     }
+    
+    public function getBrandName(?Brand $brand, string $token)
+    {
+        if ($brand) {
+            return $brand->getFullName();
+        }
+        if (stripos($token,'jaguar')!==false){
+            return 'Jaguar';
+        }
+        return 'Land Rover';
+    }
 }
