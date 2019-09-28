@@ -31,19 +31,25 @@ class CommonDataService
      * @var WhatsAppService
      */
     protected $whats_app_service;
+    /**
+     * @var OurWorksService
+     */
+    protected $our_works_service;
     
     public function __construct(
         BrandRepository $brand_repository,
         SpecialOffersService $special_offers_service,
         ContentRepository $content_repository,
         BrandResolverService $brand_resolver_service,
-        WhatsAppService $whats_app_service
+        WhatsAppService $whats_app_service,
+        OurWorksService $our_works_service
     ) {
         $this->brand_repository       = $brand_repository;
         $this->special_offers_service = $special_offers_service;
         $this->content_repository     = $content_repository;
         $this->brand_resolver_service = $brand_resolver_service;
         $this->whats_app_service      = $whats_app_service;
+        $this->our_works_service      = $our_works_service;
     }
     
     /**
@@ -69,6 +75,7 @@ class CommonDataService
         $common_data->special_offers  = $this->special_offers_service->getSpecialOffers($common_data->brand_name,
             $token);
         $common_data->whatsapp_button = $this->whats_app_service->getWhatsAppButtonHtml();
+        $common_data->our_works       = $this->our_works_service->getOurWorksHtml($common_data->content->getImagesGallery());
         
         return $common_data;
     }

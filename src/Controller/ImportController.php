@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Content;
 use App\Entity\SpecialOffer;
 use App\Repository\ContentRepository;
+use App\Service\FilesExplorerService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -14,10 +16,15 @@ class ImportController extends AbstractController
      * @var EntityManagerInterface
      */
     protected $em;
+    /**
+     * @var FilesExplorerService
+     */
+    protected $files_explorer;
     
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $em,FilesExplorerService $files_explorer)
     {
         $this->em = $em;
+        $this->files_explorer = $files_explorer;
     }
     
     public function special_offers()
@@ -150,6 +157,33 @@ class ImportController extends AbstractController
         if ($process) {
             $em->flush();
         }
+        dd($counter);
+    }
+    
+    public function ourWorksImages()
+    {
+        $images = $this->files_explorer->getImagesFromFolder('img/our_works/transmission',false);
+        
+        $tables = [
+            'price_frelander_transmissiya',
+            'price_lr_transmissya',
+            'price_rr_transmissiya',
+        ];
+        $content_repo = $this->em->getRepository(Content::class);
+        $counter=0;
+        foreach ($tables as $table) {
+            $pages = $content_repo->findBy(['priceTable'=>$table]);
+            foreach ($pages as $page) {
+                $random_images = array_rand(array_flip($images), 8);
+                shuffle($random_images);
+                $random_images = array_map(function ($item){
+                    return 'transmission/'.$item;
+                },$random_images);
+                $page->setImagesGallery($random_images);
+                $counter++;
+            }
+        }
+        $this->em->flush();
         dd($counter);
     }
     

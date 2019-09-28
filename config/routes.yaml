@@ -16,6 +16,9 @@ mail_callback:
 #change_headers:
 #    path: /import/change_headers/
 #    controller: App\Controller\ImportController::changeHeaders
+#our_works_images:
+#    path: /import/our-works-images/
+#    controller: App\Controller\ImportController::ourWorksImages
 
 dynamic_pages:
     path: /{token}/

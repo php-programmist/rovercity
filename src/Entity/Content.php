@@ -92,9 +92,9 @@ class Content
     /**
      * @var string
      *
-     * @ORM\Column(name="images_gallery_1", type="text", length=65535, nullable=false)
+     * @ORM\Column(name="images_gallery", type="text", length=65535, nullable=false)
      */
-    private $imagesGallery1;
+    private $imagesGallery;
 
     /**
      * @var bool
@@ -272,14 +272,17 @@ class Content
         return $this;
     }
 
-    public function getImagesGallery1(): ?string
+    public function getImagesGallery(): array
     {
-        return $this->imagesGallery1;
+        if (empty($this->imagesGallery)) {
+            return [];
+        }
+        return explode('|',$this->imagesGallery);
     }
 
-    public function setImagesGallery1(string $imagesGallery1): self
+    public function setImagesGallery(array $imagesGallery): self
     {
-        $this->imagesGallery1 = $imagesGallery1;
+        $this->imagesGallery = implode('|',$imagesGallery);
 
         return $this;
     }

@@ -28,4 +28,7 @@ class CommonDataDTO
     
     /** @var string*/
     public $whatsapp_button;
+    
+    /** @var string*/
+    public $our_works;
 }
