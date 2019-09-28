@@ -13,19 +13,24 @@
     <meta property="og:url" content="{{ app.request.uri }}" />
     <meta name="yandex-verification" content="97f27b0bce5bb398" />
     <meta name="google-site-verification" content="drFrdaIlpbN7KN7cB065vJ3owb5UI4wAmOfAZMnyk3U" />
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/slider.css') }}" >
-            <link rel="stylesheet" href="{{ asset('css/slick.css') }}" >
-            <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
-            <link rel="stylesheet" href="{{ asset('css/media.css') }}" >
-            <link rel="stylesheet" href="{{ asset('css/map.css') }}" >
-            <link rel="stylesheet" href="{{ asset('css/stars.css') }}" >
-            <link rel="stylesheet" href="{{ asset('css/popup-banner.css') }}" >
-            <link rel="stylesheet" type="text/css" href="{{ asset('css/mango_perezvon_style.css') }}">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
-        {% endblock %}
+    <!--schema.org-->
+    <meta property="schema:name" content="{{ block('title') }}">
+    <meta property="schema:description" content="{{ block('description') }}">
+    {{ include('modules/seo_scripts/schema.html.twig') }}
+    <!--schema.org конец-->
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-grid.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slider.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/slick.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/media.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/map.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/stars.css') }}" >
+    <link rel="stylesheet" href="{{ asset('css/popup-banner.css') }}" >
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/mango_perezvon_style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
+{% endblock %}
     {{ include('modules/seo_scripts/yandex_metrika.html.twig') }}
     </head>
     <body>
