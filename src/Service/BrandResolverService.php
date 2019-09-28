@@ -22,14 +22,15 @@ class BrandResolverService
      *
      * @return \App\Entity\Brand|null
      */
-    public function getBrand($token):?Brand
+    public function getBrand($token): ?Brand
     {
         $brands = $this->brand_repository->findAllSortedByAliasLength();
         foreach ($brands as $brand) {
-            if (strpos($token, $brand->getAlias())!==false) {
+            if (strpos($token, $brand->getAlias()) !== false) {
                 return $brand;
             }
         }
+        
         return null;
     }
     
@@ -43,12 +44,13 @@ class BrandResolverService
         if ( ! $brand) {
             return null;
         }
-        if ($parent = $brand->getParent()) {
+        
+        if (stripos($brand->getFullName(), 'jaguar') === false && $parent = $brand->getParent()) {
             $models = $parent->getChildren();
-        }
-        else{
+        } else {
             $models = $brand->getChildren();
         }
+        
         return $models;
     }
     
@@ -57,9 +59,10 @@ class BrandResolverService
         if ($brand) {
             return $brand->getFullName();
         }
-        if (stripos($token,'jaguar')!==false){
+        if (stripos($token, 'jaguar') !== false) {
             return 'Jaguar';
         }
+        
         return 'Land Rover';
     }
 }
