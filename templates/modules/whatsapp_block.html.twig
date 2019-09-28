@@ -1,0 +1,38 @@
+<!-- Whatsapp_block -->
+
+<link rel="stylesheet" href="{{ asset('/css/whatsapp.css') }}">
+<div id="whatsapp_container" class="container-fluid">
+    <div class="row">
+        <div class="col-lg-5 col-sm-12 d-flex justify-content-center">
+            <a class="whatsapp-form-btn"
+               href="{{ whatsapp_link }}"
+               target="_blank">
+                <img {{ lazy_load(asset('/img/whatsapp/whatsapp-phone.png')) }} alt="">
+            </a>
+        </div>
+        <div class="col-lg-7 col-sm-12">
+            <div class="row right-column">
+
+                <div class="col-md-8 col-sm-12 d-flex align-items-lg-start align-items-sm-center justify-content-end flex-column">
+                    <div class="whatsapp_header">заявка в whatsapp</div>
+                    <div class="whatsapp_text">
+                        <p>отправьте нам заявку с фото</p>
+                        <p>и получите просчет фиксированной</p>
+                        <p>стоимости ремонта вашего авто</p>
+                    </div>
+                    <a class="whatsapp-form-btn"
+                       href="{{ whatsapp_link }}"
+                       target="_blank">
+                        <img {{ lazy_load(asset('/img/whatsapp/whatsapp-button.png'),['max-width-100']) }} alt="">
+                    </a>
+
+                </div>
+                <div class="col-md-4 col-sm-12 d-flex align-items-end justify-content-center">
+                    <img {{ lazy_load(asset('/img/whatsapp/whatsapp-garant.png')) }} alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Whatsapp_block.End -->
+

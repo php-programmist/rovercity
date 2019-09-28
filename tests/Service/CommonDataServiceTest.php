@@ -2,6 +2,7 @@
 
 namespace App\Tests\Service;
 
+use App\DTO\CommonDataDTO;
 use App\Entity\Brand;
 use App\Entity\Content;
 use App\Service\CommonDataService;
@@ -20,16 +21,16 @@ class CommonDataServiceTest extends WebTestCase
     public function getCommonData()
     {
         $common_data = $this->common_data_service->getCommonData('land-rover-discovery');
-        $this->assertIsArray($common_data);
+        $this->assertInstanceOf(CommonDataDTO::class,$common_data);
         $this->assertNotEmpty($common_data);
-        $this->assertNotEmpty($common_data['brands']);
-        $this->assertIsArray($common_data['brands']);
-        $this->assertNotEmpty($common_data['special_offers']);
-        $this->assertIsArray($common_data['special_offers']);
-        $this->assertNotEmpty($common_data['content']);
-        $this->assertInstanceOf(Content::class,$common_data['content']);
-        $this->assertNotEmpty($common_data['brand']);
-        $this->assertInstanceOf(Brand::class,$common_data['brand']);
+        $this->assertNotEmpty($common_data->brands);
+        $this->assertIsArray($common_data->brands);
+        $this->assertNotEmpty($common_data->special_offers);
+        $this->assertIsArray($common_data->special_offers);
+        $this->assertNotEmpty($common_data->content);
+        $this->assertInstanceOf(Content::class,$common_data->content);
+        $this->assertNotEmpty($common_data->brand);
+        $this->assertInstanceOf(Brand::class,$common_data->brand);
     }
     
     /** @test */
