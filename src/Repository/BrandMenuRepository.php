@@ -29,16 +29,10 @@ class BrandMenuRepository extends ServiceEntityRepository
     public function isBrandMenu($path)
     {
         $path = trim($path,' /');
-        if (empty(self::$cached_items)) {
-            self::$cached_items = $this->findAll();
+        if (!isset(self::$cached_items[$path])) {
+           self::$cached_items[$path] = (bool)$this->findOneBy(['alias'=>$path]);
         }
-        foreach (self::$cached_items as $item) {
-            if ($item->getAlias() === $path) {
-                return true;
-            }
-        }
-    
-        return false;
+        return self::$cached_items[$path];
     }
 
     // /**
